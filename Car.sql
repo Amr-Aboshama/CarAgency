@@ -4,13 +4,20 @@ use CarAgencyDB
 
 /*a lot of on delete/update cascade caused an error, I don't know why, so I made them no action*/
 
+create table Jobs
+(
+JobID int IDENTITY(1,1) primary key,
+JobName nvarChar(30) not null,
+);
+
 create table Employee
 ( 
 EmpNatID decimal(14,0) primary key,
 Name nvarchar(30) not null,
 Address nvarchar(50),
-Job nvarchar(20),
+JobID int,
 salary decimal(9, 2)
+foreign key (JobID) references Jobs(JobID) on delete set null on update set null
 );
 
 create table EmployeePhones
@@ -43,11 +50,10 @@ foreign key (StoreEmpID) references Employee(EmpNatID) on delete set null on upd
 
 create table UserBasic
 (
-Username nvarchar(20) primary key,
-Password nvarchar(20) not null,
-Priv int not null,
+Username varchar(20) primary key,			/* Username must be in English*/
+Password varchar(100) not null,				/* Password will be resized according to hashing algorithm*/
 EmpID decimal(14,0) not null,
-foreign key (EmpID) references Employee(EmpNatID) on delete cascade on update cascade
+foreign key (EmpID) references Employee(EmpNatID) on delete no action on update no action
 );
 
 create table Customer
@@ -92,8 +98,8 @@ Type nvarchar(20),
 Model nvarchar(20),
 Specs nvarchar(2000),
 PrimaryChashPrice decimal(12, 2),
-CurrCode char(3) default 'EGP', /*What would happen if the 'EGP' wasn't exist in Currency?*/
-foreign key(CurrCode) references Currency
+Currency char(3) default 'EGP', /*What would happen if the 'EGP' wasn't exist in Currency?*/
+foreign key(Currency) references Currency
 );
 
 create table Car
@@ -123,28 +129,24 @@ foreign key (EmpID) references Employee(EmpNatID) on delete set null on update c
 create table Treasury
 (
 TreasuryID int IDENTITY(1,1) primary key,
-Name nvarchar(25) not null,
+Name nvarchar(25) not null unique,
 BankAccID nvarchar(30),
 BankBranch nvarchar(30),
 BankAccName nvarchar(30),
-Balance decimal(18, 2) default 0,
-CurrCode char(3) default 'EGP',
-foreign key (CurrCode) references Currency
 );
 
 create table Transactions
 (
-DepositOrWithdraw bit not null,
+TreasuryID int not null,
 Price decimal(18, 2) not null,
 Currency char(3) default 'EGP',
 EmpID decimal(14,0),
-TreasuryID int,
 Notes nvarchar(1000),
 TransDate datetime default getdate(),
 TransactionID int IDENTITY(1,1) primary key,
 foreign key (Currency) references Currency,
 foreign key (EmpID) references Employee(EmpNatID) on delete set null on update cascade,
-foreign key (TreasuryID) references Treasury(TreasuryID) on delete set null on update cascade
+foreign key (TreasuryID) references Treasury(TreasuryID) on delete cascade on update cascade
 );
 
 create table Pruchases 
@@ -210,5 +212,13 @@ TransID int,
 foreign key (CustID) references Customer(CustNatID) on delete cascade on update cascade,
 foreign key (TransID) references Transactions(TransactionID) on delete cascade on update cascade,
 foreign key (InstallmentID) references Installment(InstallmentID),
+);
+
+create table UserPrivileges
+(
+Username varchar(20) not null,
+JobID int not null,
+foreign key (Username) references UserBasic(Username) on delete cascade on update cascade,
+foreign key (JobID) references Jobs(JobID) on delete cascade on update cascade
 );
 

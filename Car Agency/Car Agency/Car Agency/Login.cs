@@ -16,7 +16,6 @@ namespace Car_Agency
         public Login()
         {
             InitializeComponent();
-            MessageBox.Show("Hello");
         }
     }
 }

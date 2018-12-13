@@ -36,7 +36,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 300);
             this.Name = "Login";
-            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Login";
             this.ResumeLayout(false);
 
