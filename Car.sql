@@ -6,8 +6,8 @@ use CarAgencyDB
 
 create table Jobs
 (
-JobID int IDENTITY(1,1) primary key,
-JobName nvarChar(30) not null,
+ID int IDENTITY(1,1) primary key,
+Name nvarChar(30) not null,
 );
 
 create table Employee
