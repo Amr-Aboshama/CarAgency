@@ -17,7 +17,7 @@ Name nvarchar(30) not null,
 Address nvarchar(50),
 JobID int,
 salary decimal(9, 2)
-foreign key (JobID) references Jobs(JobID) on delete set null on update set null
+foreign key (JobID) references Jobs(ID) on delete set null on update set null
 );
 
 create table EmployeePhones
@@ -51,7 +51,7 @@ foreign key (StoreEmpID) references Employee(EmpNatID) on delete set null on upd
 create table UserBasic
 (
 Username varchar(20) primary key,			/* Username must be in English*/
-Password varchar(100) not null,				/* Password will be resized according to hashing algorithm*/
+Password varchar(64) not null,				/* Password will be resized according to hashing algorithm*/
 EmpID decimal(14,0) not null,
 foreign key (EmpID) references Employee(EmpNatID) on delete no action on update no action
 );
@@ -216,9 +216,10 @@ foreign key (InstallmentID) references Installment(InstallmentID),
 
 create table UserPrivileges
 (
-Username varchar(20) not null,
-JobID int not null,
+Username varchar(20),
+JobID int,
+primary key(Username,JobID),
 foreign key (Username) references UserBasic(Username) on delete cascade on update cascade,
-foreign key (JobID) references Jobs(JobID) on delete cascade on update cascade
+foreign key (JobID) references Jobs(ID) on delete cascade on update cascade
 );
 
