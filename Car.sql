@@ -22,7 +22,7 @@ foreign key (JobName) references Jobs(Name) on delete set null on update set nul
 create table EmployeePhones
 (
 EmpNatID decimal(14,0),
-Phone char(15),
+Phone decimal(14, 0),
 primary key(EmpNatID, Phone),
 foreign key(EmpNatID) references Employee on delete cascade on update cascade	
 );
@@ -57,7 +57,7 @@ foreign key (EmpID) references Employee(EmpNatID) on delete no action on update 
 
 create table Customer
 (
-CustNatID char(15) primary key,
+CustNatID decimal(14, 0) primary key,
 Name nvarchar(30) not null,
 CustAddress nvarchar(50) not null,
 Email nvarchar(30),
@@ -70,15 +70,15 @@ Credit decimal(12, 2) default 0,	/*each customer can have credit that can be use
 
 create table CustomerPhoneNumbers
 (
-Phone char(15),
-CustID char(15), 
+Phone decimal(14, 0),
+CustID decimal(14, 0), 
 primary key(Phone,CustID),
 foreign key (CustID) references Customer(CustNatID) on delete cascade on update cascade
 );
 
 create table Supplier /*supplier data is stored as customer data and there is a reference to that customer*/
 (
-CustID char(15),
+CustID decimal(14, 0) unique,
 SupID int IDENTITY(1,1) primary key,
 foreign key (CustID) references Customer(CustNatID)	on delete cascade on update cascade
 );
@@ -116,7 +116,7 @@ foreign key (CatName) references Category(CatName) on delete set null on update 
 create table CarRequest
 (
 CatName nvarchar(20) not null,
-CustID char(15), 
+CustID decimal(14, 0), 
 EmpID decimal(14,0),
 Notes nvarchar(1000),
 ReqID int IDENTITY(1,1) primary key,
@@ -148,7 +148,7 @@ foreign key (EmpID) references Employee(EmpNatID) on delete set null on update c
 foreign key (TreasuryID) references Treasury(TreasuryID) on delete cascade on update cascade
 );
 
-create table Pruchases 
+create table Purchases 
 (
 CarID varchar(20) not null,
 EmpID decimal(14,0),
@@ -166,10 +166,10 @@ create table Sales
 (
 CarID varchar(20) not null,
 CashOrInstallment bit not null,
-CustID char(15) not null,
-GNatID char(15) not null,	/*guarantor national ID*/
+CustID decimal(14, 0) not null,
+GNatID decimal(14, 0) not null,	/*guarantor national ID*/
 GName nvarchar(30), 
-GPhone char(15),
+GPhone decimal(14, 0),
 GAddress nvarchar(50),
 EmpID decimal(14,0),
 TransID int,
@@ -199,7 +199,7 @@ create table Cheque
 (
 ChequeID varchar(20) primary key,
 ForOrOnMe bit not null,
-CustID char(15) not null,
+CustID decimal(14, 0) not null,
 CustomerBank nvarchar(30)not null,
 DueDate datetime not null,
 DelayPenalty decimal(12, 2) not null,
