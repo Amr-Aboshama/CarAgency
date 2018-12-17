@@ -138,7 +138,7 @@ BankAccName nvarchar(30),
 create table Transactions
 (
 TreasuryID int not null,
-Price decimal(18, 2) not null,
+price decimal(12, 4) not null,
 Currency char(3) default 'EGP',
 EmpID decimal(14,0),
 Notes nvarchar(1000),
@@ -152,11 +152,14 @@ foreign key (TreasuryID) references Treasury(TreasuryID) on delete cascade on up
 create table Purchases 
 (
 CarID varchar(20) not null,
+price decimal(12, 4) not null,
+Currency char(3) default 'EGP',
 EmpID decimal(14,0),
 SupID int,
 TransID int,
 PurchaseDate datetime default getdate(),
 PurchaseID int IDENTITY(1,1) primary key,
+foreign key (Currency) references Currency,
 foreign key (EmpID) references Employee(EmpNatID) on delete set null on update cascade,
 foreign key (CarID) references Car(ChasisID),
 foreign key (TransID) references Transactions(TransactionID),
@@ -167,6 +170,8 @@ create table Sales
 (
 CarID varchar(20) not null,
 CashOrInstallment bit not null,
+price decimal(12, 4) not null,
+Currency char(3) default 'EGP',
 CustID decimal(14, 0) not null,
 GNatID decimal(14, 0) not null,	/*guarantor national ID*/
 GName nvarchar(30), 
@@ -176,6 +181,7 @@ EmpID decimal(14,0),
 TransID int,
 SaleDate datetime default getdate(),
 SaleID int IDENTITY(1,1) primary key,
+foreign key (Currency) references Currency,
 foreign key (CarID) references Car(ChasisID) on update cascade,
 foreign key (CustID) references Customer(CustNatID) on update cascade,
 foreign key (EmpID) references Employee(EmpNatID),
@@ -186,9 +192,9 @@ create table Installment
 (
 SubmittedPrice decimal(12, 2) not null,
 PriceOfOneInstallment decimal(12, 2) not null,
-SaleID int not null,
-Factor decimal(12, 2) default 1,	/*Used when some customer purchase a car in EGP although it's in USD*/
 Currency char(3) default 'EGP',
+SaleID int not null unique,
+Factor decimal(12, 2) default 1,	/*Used when some customer purchase a car in EGP although it's in USD*/
 ArchivePlace nvarchar(50),	/*related to the physical place where it's stored*/
 DrawerNum int,	/*drawer number where the achive is placed*/
 InstallmentID int IDENTITY(1,1) primary key,
@@ -199,7 +205,8 @@ foreign key (SaleID) references Sales(SaleID) on delete cascade on update cascad
 create table Cheque
 (
 ChequeID varchar(20) primary key,
-ForOrOnMe bit not null,
+price decimal(12, 4) not null,
+Currency char(3) default 'EGP',
 CustID decimal(14, 0) not null,
 CustomerBank nvarchar(30)not null,
 DueDate datetime not null,
@@ -209,6 +216,7 @@ Notes nvarchar(2000),
 Status int default 0,
 InstallmentID int,	/*it can be null because a cheque can be made without an installment*/
 TransID int,
+foreign key (Currency) references Currency,
 foreign key (CustID) references Customer(CustNatID) on delete cascade on update cascade,
 foreign key (TransID) references Transactions(TransactionID) on delete cascade on update cascade,
 foreign key (InstallmentID) references Installment(InstallmentID),
