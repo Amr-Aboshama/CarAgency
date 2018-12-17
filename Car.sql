@@ -133,7 +133,7 @@ Name nvarchar(25) not null unique,
 BankAccID nvarchar(30),
 BankBranch nvarchar(30),
 BankAccName nvarchar(30),
-isBank bit(1)
+isBank bit
 );
 
 create table Transactions
