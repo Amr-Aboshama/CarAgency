@@ -55,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCheque.Designer.cs">
+      <DependentUpon>AddCheque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddInstallment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInstallment.Designer.cs">
+      <DependentUpon>AddInstallment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Login.cs">
@@ -65,6 +77,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCheque.resx">
+      <DependentUpon>AddCheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddInstallment.resx">
+      <DependentUpon>AddInstallment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

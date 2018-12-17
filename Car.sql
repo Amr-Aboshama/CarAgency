@@ -130,6 +130,7 @@ create table Treasury
 (
 TreasuryID int IDENTITY(1,1) primary key,
 Name nvarchar(25) not null unique,
+isBank bit not null,
 BankAccID nvarchar(30),
 BankBranch nvarchar(30),
 BankAccName nvarchar(30),
@@ -211,11 +212,10 @@ CustID decimal(14, 0) not null,
 CustomerBank nvarchar(30)not null,
 DueDate datetime not null,
 DelayPenalty decimal(12, 2) not null,
-RecordDate datetime default getdate(),
 Notes nvarchar(2000),
-Status int default 0,
 InstallmentID int,	/*it can be null because a cheque can be made without an installment*/
 TransID int,
+RecordDate datetime default getdate(),
 foreign key (Currency) references Currency,
 foreign key (CustID) references Customer(CustNatID) on delete cascade on update cascade,
 foreign key (TransID) references Transactions(TransactionID) on delete cascade on update cascade,
@@ -231,3 +231,4 @@ foreign key (Username) references UserBasic(Username) on delete cascade on updat
 foreign key (JobID) references Jobs(ID) on delete cascade on update cascade
 );
 
+insert into Currency values('EGP', 1);
