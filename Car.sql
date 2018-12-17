@@ -16,7 +16,7 @@ Name nvarchar(30) not null,
 Address nvarchar(50),
 JobName nvarchar(50),
 salary decimal(9, 2)
-foreign key (JobName) references Jobs(Name) on delete set null on update set null
+foreign key (JobName) references Jobs(Name) on delete set null on update cascade
 );
 
 create table EmployeePhones
@@ -51,8 +51,8 @@ create table UserBasic
 (
 Username varchar(20) primary key,			/* Username must be in English*/
 Password varchar(100) not null,				/* Password will be resized according to hashing algorithm*/
-EmpID decimal(14,0) not null,
-foreign key (EmpID) references Employee(EmpNatID) on delete no action on update no action
+EmpID decimal(14,0),
+foreign key (EmpID) references Employee(EmpNatID) on delete set null on update cascade
 );
 
 create table Customer
@@ -218,6 +218,8 @@ create table UserPrivileges
 Username varchar(20) not null,
 JobName nvarchar(50) not null,
 foreign key (Username) references UserBasic(Username) on delete cascade on update cascade,
-foreign key (JobName) references Jobs(Name) on delete cascade on update cascade
+foreign key (JobName) references Jobs(Name) on delete no action on update no action
 );
 
+
+INSERT INTO Jobs values('--All--');
