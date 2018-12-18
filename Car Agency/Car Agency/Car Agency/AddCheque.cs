@@ -69,6 +69,8 @@ namespace Car_Agency
                 MessageBox.Show("Please specify if the cheque is \"for you\" or \"On you\"");
                 return;
             }
+            else if (OnMeRadioButton.Checked == true)
+                price = -price;
             string Currency = CurrencyComboBox.SelectedValue.ToString();
             if (Currency == "")
             {
