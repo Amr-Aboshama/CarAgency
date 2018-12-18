@@ -88,6 +88,12 @@ namespace Car_Agency
             return dbMan.ExecuteReader(query);
         }
 
+        public int InsertJob(string name)
+        {
+            string query = "insert into jobs(Name) values('" + name + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
