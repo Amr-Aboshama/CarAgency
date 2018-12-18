@@ -27,3 +27,5 @@ INSERT INTO Category(CatName) values ('Corolla_P1');
 INSERT INTO Car(ChasisID, catName) values ('x23f983vg', 'Corolla_P1');
 INSERT INTO Sales(CarID, CashOrInstallment, price, CustID, GNatID) 
 values('x23f983vg', 0, 1234, 12345678901234, 123);
+
+INSERT INTO Supplier(CustID) values (12345678901234);

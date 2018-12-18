@@ -87,7 +87,7 @@ foreign key (CustID) references Customer(CustNatID)	on delete cascade on update 
 create table Currency	/*To store the currencies that are used in the company,*/
 (						/*we can group by a currency later*/
 CurrCode char(3) primary key,	/*such as EGP and USD*/
-EGPPrice decimal(9, 4)			/*can be used later*/
+EGPPrice decimal(9, 2)			/*can be used later*/
 );
 
 create table Category	/*number of cars in a category is derived from the cars that refer to that category*/
@@ -104,10 +104,10 @@ foreign key(Currency) references Currency
 
 create table Car
 (
-ChasisID varchar(20) primary key,
-MotorNum varchar(20) unique,
-Color nvarchar(20),
-CatName nvarchar(20),
+ChassisID varchar(20) primary key,
+MotorNum varchar(20) unique not null,
+Color nvarchar(20) not null,
+CatName nvarchar(20) not null,
 StoreID int,
 Status int default 0,	/*isn't sold initially*/
 foreign key (StoreID) references Store(StoreID) on delete set null on update cascade,
@@ -139,7 +139,7 @@ BankAccName nvarchar(30),
 create table Transactions
 (
 TreasuryID int not null,
-price decimal(12, 4) not null,
+price decimal(12, 2) not null,
 Currency char(3) default 'EGP',
 EmpID decimal(14,0),
 Notes nvarchar(1000),
@@ -153,10 +153,10 @@ foreign key (TreasuryID) references Treasury(TreasuryID) on delete cascade on up
 create table Purchases 
 (
 CarID varchar(20) not null,
-price decimal(12, 4) not null,
+price decimal(12, 2) not null,
 Currency char(3) default 'EGP',
 EmpID decimal(14,0),
-SupID int,
+SupID int not null,
 TransID int,
 PurchaseDate datetime default getdate(),
 PurchaseID int IDENTITY(1,1) primary key,
@@ -171,7 +171,7 @@ create table Sales
 (
 CarID varchar(20) not null,
 CashOrInstallment bit not null,
-price decimal(12, 4) not null,
+price decimal(12, 2) not null,
 Currency char(3) default 'EGP',
 CustID decimal(14, 0) not null,
 GNatID decimal(14, 0) not null,	/*guarantor national ID*/
@@ -206,7 +206,7 @@ foreign key (SaleID) references Sales(SaleID) on delete cascade on update cascad
 create table Cheque
 (
 ChequeID varchar(20) primary key,
-price decimal(12, 4) not null,
+price decimal(12, 2) not null,
 Currency char(3) default 'EGP',
 CustID decimal(14, 0) not null,
 CustomerBank nvarchar(30)not null,
