@@ -90,8 +90,11 @@ namespace Car_Agency
             int r1 = controllerObj.InsertCar(ChassisID, MotorNum, Color, CatName);
             int r2 = controllerObj.InsertPurchase(ChassisID, price, Currency, SupID, EmpID);
             if (r1 > 0 && r2 > 0)
+            {
                 MessageBox.Show("The car is purchased successfully");
-            else if(r1==0)
+                this.Close();
+            }
+            else if (r1 == 0)
                 MessageBox.Show("An error occured while inserting the Car");
             else
             {
