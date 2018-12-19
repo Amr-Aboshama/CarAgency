@@ -134,13 +134,14 @@ namespace Car_Agency
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int InsertPurchase(string CarID, decimal price, string Currency, int SupID)
+        public int InsertPurchase(string CarID, decimal price, string Currency, int SupID, ulong EmpID)
         {
-            string query = "INSERT INTO Purchases(CarID, price, Currency, SupID) VALUES('"
+            string query = "INSERT INTO Purchases(CarID, price, Currency, SupID, EmpID) VALUES('"
                 + CarID + "', "
                 + price.ToString() + ", '"
                 + Currency + "', "
-                + SupID.ToString() + ");";
+                + SupID.ToString() + ", '"
+                + EmpID.ToString() + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 

@@ -16,7 +16,7 @@ namespace Car_Agency
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PurchaseCar());
+            Application.Run(new PurchaseCar(123456789));
         }
     }
 }

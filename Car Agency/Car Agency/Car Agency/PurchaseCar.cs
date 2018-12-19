@@ -14,10 +14,12 @@ namespace Car_Agency
     public partial class PurchaseCar : MetroForm
     {
         Controller controllerObj = new Controller();
+        ulong EmpID;
 
-        public PurchaseCar()
+        public PurchaseCar(ulong EmpID)
         {
             InitializeComponent();
+            this.EmpID = EmpID;
             CurrencyComboBox.DataSource = controllerObj.SelecAllCurrency();
             CurrencyComboBox.ValueMember = CurrencyComboBox.DisplayMember = "CurrCode";
             SupplierComboBox.DataSource = controllerObj.SelectSuppliers();
@@ -86,7 +88,7 @@ namespace Car_Agency
             int SupID = Convert.ToInt32(SupplierComboBox.SelectedValue);
 
             int r1 = controllerObj.InsertCar(ChassisID, MotorNum, Color, CatName);
-            int r2 = controllerObj.InsertPurchase(ChassisID, price, Currency, SupID);
+            int r2 = controllerObj.InsertPurchase(ChassisID, price, Currency, SupID, EmpID);
             if (r1 > 0 && r2 > 0)
                 MessageBox.Show("The car is purchased successfully");
             else if(r1==0)

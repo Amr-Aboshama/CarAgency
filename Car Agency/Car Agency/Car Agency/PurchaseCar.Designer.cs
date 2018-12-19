@@ -39,7 +39,6 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SupplierComboBox = new MetroFramework.Controls.MetroComboBox();
             this.CurrencyComboBox = new MetroFramework.Controls.MetroComboBox();
@@ -209,15 +208,6 @@
             this.metroLabel7.TabIndex = 10;
             this.metroLabel7.Text = "Currency";
             // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(324, 380);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(159, 19);
-            this.metroLabel8.TabIndex = 11;
-            this.metroLabel8.Text = "Employee who purchased";
-            // 
             // metroButton1
             // 
             this.metroButton1.AutoSize = true;
@@ -288,7 +278,6 @@
             this.Controls.Add(this.CurrencyComboBox);
             this.Controls.Add(this.SupplierComboBox);
             this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
@@ -320,7 +309,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroComboBox SupplierComboBox;
         private MetroFramework.Controls.MetroComboBox CurrencyComboBox;
