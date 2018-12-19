@@ -137,13 +137,9 @@ BankAccName nvarchar(30),
 create table Transactions
 (
 TreasuryID int not null,
-Price decimal(18, 2) not null,
-Currency char(3) default 'EGP',
 EmpID decimal(14,0),
-Notes nvarchar(1000),
 TransDate datetime default getdate(),
 TransactionID int IDENTITY(1,1) primary key,
-foreign key (Currency) references Currency,
 foreign key (EmpID) references Employee(EmpNatID) on delete set null on update cascade,
 foreign key (TreasuryID) references Treasury(TreasuryID) on delete cascade on update cascade
 );
@@ -154,12 +150,15 @@ CarID varchar(20) not null,
 EmpID decimal(14,0),
 SupID int,
 TransID int,
+Price decimal(9, 2) not null,
+Currency char(3) default 'EGP',
 PurchaseDate datetime default getdate(),
 PurchaseID int IDENTITY(1,1) primary key,
 foreign key (EmpID) references Employee(EmpNatID) on delete set null on update cascade,
 foreign key (CarID) references Car(ChasisID),
 foreign key (TransID) references Transactions(TransactionID),
 foreign key (SupID) references Supplier(SupID) on delete set null on update cascade,
+foreign key (Currency) references Currency(Currcode) on delete set default on update cascade
 );
 
 create table Sales
@@ -173,12 +172,26 @@ GPhone decimal(14, 0),
 GAddress nvarchar(50),
 EmpID decimal(14,0),
 TransID int,
+Price decimal(9, 2) not null,
+Currency char(3) default 'EGP',
 SaleDate datetime default getdate(),
 SaleID int IDENTITY(1,1) primary key,
 foreign key (CarID) references Car(ChasisID) on update cascade,
 foreign key (CustID) references Customer(CustNatID) on update cascade,
 foreign key (EmpID) references Employee(EmpNatID),
 foreign key (TransID) references Transactions(TransactionID),
+foreign key (Currency) references Currency(Currcode) on delete set default on update cascade
+);
+
+create table OtherTransaction
+(
+ID int Identity(1,1) primary key,
+transID int,
+Price decimal(9, 2) not null,
+Currency char(3) default 'EGP',
+Notes nvarchar(1000),
+foreign key (transID) references Transactions(TransactionID) on delete no action on update cascade,
+foreign key (Currency) references Currency(Currcode) on delete set default on update cascade
 );
 
 create table Installment
