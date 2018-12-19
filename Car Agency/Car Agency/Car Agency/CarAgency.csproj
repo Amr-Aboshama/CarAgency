@@ -74,6 +74,12 @@
       <DependentUpon>AddJob.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="CreditManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditManager.Designer.cs">
+      <DependentUpon>CreditManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBManager.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -89,6 +95,26 @@
     <Compile Include="PurchaseCar.Designer.cs">
       <DependentUpon>PurchaseCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewBank.Designer.cs" />
+    <Compile Include="ViewCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCheques.Designer.cs">
+      <DependentUpon>ViewCheques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInstallment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInstallment.Designer.cs">
+      <DependentUpon>ViewInstallment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewSafe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewSafe.Designer.cs" />
     <EmbeddedResource Include="AddCheque.resx">
       <DependentUpon>AddCheque.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddJob.resx">
       <DependentUpon>AddJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditManager.resx">
+      <DependentUpon>CreditManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -112,6 +141,12 @@
     </Compile>
     <EmbeddedResource Include="PurchaseCar.resx">
       <DependentUpon>PurchaseCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCheques.resx">
+      <DependentUpon>ViewCheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInstallment.resx">
+      <DependentUpon>ViewInstallment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

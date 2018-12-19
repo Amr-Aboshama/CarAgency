@@ -60,6 +60,56 @@ namespace Car_Agency
             return Convert.ToInt32(dbMan.ExecuteScalar(query));
         }
 
+        public DataTable SelectAllInstallments()
+        {
+            string query = "select installmentID as 'Installment ID', SaleID as 'Sale ID', submittedPrice as 'Submitted Price', "
+                + "PriceOfOneInstallment as'Price of one Installment', Factor, Currency, ArchivePlace as 'Archive Place', "
+                + "DrawerNum as'Drawer Number', "
+                + "(case when exists(select transID from cheque C where C.installmentID = I.installmentID and TransID is null) "
+                + "then 'No' else 'Yes' end) as 'Completed' from Installment I order by installmentID desc; ";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectCheques(int? installmentID)
+        {
+            string query = "select ChequeID as 'Cheque ID', Price, DelayPenalty as 'Delay Penalty', Currency, "
+                + "CustID as 'Customer National ID', CustomerBank as 'Customer Bank', DueDate as 'Due Date', "
+                + "RecordDate as'Record Date', InstallmentID as 'Installment ID', TransID as 'Transaction ID', Notes "
+                + "from Cheque " + (installmentID == null ? "" : ("where installmentID = " + installmentID.ToString())) +
+                " order by RecordDate desc; ";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewSafeBalance()
+        {
+            string query = "SELECT SUM(Price) AS Balance, Currency FROM Transactions WHERE TREASURYID = 1 group by(Currency);";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewSafeTransactions()
+        {
+            string query = "SELECT Price, Currency, TransDate as Transaction_Date, Name as Employee_Name, Notes " +
+                "FROM Transactions LEFT OUTER JOIN Employee ON EMPID = EmpNatID " +
+                "WHERE TreasuryID = 1";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewBankBalance()
+        {
+            string query = "SELECT Name, SUM(Price) AS Balance, Currency FROM Transactions " +
+                "JOIN Treasury ON Treasury.TreasuryID = Transactions.TreasuryID where Treasury.TreasuryID != 1 " +
+                "GROUP BY Name, Currency;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewBankTransactions()
+        {
+            string query = "SELECT Price, Currency, TransDate as Transaction_Date, Name as Employee_Name, Notes " +
+                "FROM Transactions LEFT OUTER JOIN Employee ON EMPID = EmpNatID " +
+                "WHERE TreasuryID != 1";
+            return dbMan.ExecuteReader(query);
+        }
+
         public int insertInstallment(decimal SubmittedPrice, decimal PriceOfOneInstallment, string Currency, int SaleID,
             decimal Factor, string ArchivePlace, int? DrawerNum)
         {
@@ -70,11 +120,11 @@ namespace Car_Agency
                 + SaleID.ToString() + ", "
                 + Factor.ToString() + ", '"
                 + ArchivePlace + "', "
-                + (DrawerNum==null?"null": DrawerNum.ToString()) + ");";
+                + (DrawerNum == null ? "null" : DrawerNum.ToString()) + ");";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int insertCheque(string ChequeID, decimal price, string Currency, ulong CustID, string CustomerBank, 
+        public int insertCheque(string ChequeID, decimal price, string Currency, ulong CustID, string CustomerBank,
             DateTime DueDate, decimal DelayPenalty, string Notes, int? installmentID)
         {
             string query = "insert into cheque(ChequeID, price, Currency, CustID, CustomerBank, DueDate, DelayPenalty, Notes," +
@@ -95,7 +145,7 @@ namespace Car_Agency
         {
             string query = "select name from customer where CustNatID = " + custID.ToString() + ";";
             DataTable dt = dbMan.ExecuteReader(query);
-            if(dt!=null)
+            if (dt != null)
                 return dt.Rows[0].ToString();
             return "";
         }
@@ -150,4 +200,4 @@ namespace Car_Agency
             dbMan.CloseConnection();
         }
     }
-    }
+}
