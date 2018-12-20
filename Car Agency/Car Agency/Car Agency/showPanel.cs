@@ -11,11 +11,11 @@ using MetroFramework.Forms;
 
 namespace Car_Agency
 {
-    public partial class showPrivileges : MetroForm
+    public partial class showPanel : MetroForm
     {
         Controller controllerObj;
         string Username;
-        public showPrivileges(string User)
+        public showPanel(string User)
         {
             InitializeComponent();
             controllerObj = new Controller();
@@ -24,9 +24,23 @@ namespace Car_Agency
 
         private void showPrivileges_Load(object sender, EventArgs e)
         {
-            privileges.DataSource = controllerObj.getUserPrivileges(Username);
-            privileges.DisplayMember = privileges.ValueMember = "JobName";
-            privileges.SelectedValue = "";
+            if(Username == "admin")
+            {
+                adminPanelButton.Visible = true;
+                DataTable dt = controllerObj.getAllJobs();
+                for (int i = 0; i < dt.Rows.Count; ++i)
+                    if (dt.Rows[i][0].ToString() == "--All--")
+                    {
+                        dt.Rows.RemoveAt(i);
+                        return;
+                    }
+            }
+            else
+            {
+                privileges.DataSource = controllerObj.getUserPrivileges(Username);
+                privileges.DisplayMember = privileges.ValueMember = "JobName";
+                privileges.SelectedValue = "";
+            }
         }
 
         private void showPropertiesButton_Click(object sender, EventArgs e)

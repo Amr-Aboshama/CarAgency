@@ -1,6 +1,6 @@
 ﻿namespace Car_Agency
 {
-    partial class showPrivileges
+    partial class showPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,7 @@
             this.privileges = new MetroFramework.Controls.MetroComboBox();
             this.showPropertiesButton = new MetroFramework.Controls.MetroButton();
             this.LogoutButton = new MetroFramework.Controls.MetroButton();
+            this.adminPanelButton = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -81,18 +82,31 @@
             this.LogoutButton.UseSelectable = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
-            // showPrivileges
+            // adminPanelButton
+            // 
+            this.adminPanelButton.Location = new System.Drawing.Point(99, 216);
+            this.adminPanelButton.Name = "adminPanelButton";
+            this.adminPanelButton.Size = new System.Drawing.Size(108, 23);
+            this.adminPanelButton.Style = MetroFramework.MetroColorStyle.Silver;
+            this.adminPanelButton.TabIndex = 4;
+            this.adminPanelButton.Text = "Admin Panel";
+            this.adminPanelButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.adminPanelButton.UseSelectable = true;
+            this.adminPanelButton.Visible = false;
+            // 
+            // showPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 233);
+            this.ClientSize = new System.Drawing.Size(300, 269);
+            this.Controls.Add(this.adminPanelButton);
             this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.showPropertiesButton);
             this.Controls.Add(this.privileges);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "showPrivileges";
+            this.Name = "showPanel";
             this.Style = MetroFramework.MetroColorStyle.Silver;
-            this.Text = "Show Privileges";
+            this.Text = "User Panel";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.showPrivileges_FormClosed);
             this.Load += new System.EventHandler(this.showPrivileges_Load);
@@ -107,5 +121,6 @@
         private MetroFramework.Controls.MetroComboBox privileges;
         private MetroFramework.Controls.MetroButton showPropertiesButton;
         private MetroFramework.Controls.MetroButton LogoutButton;
+        private MetroFramework.Controls.MetroButton adminPanelButton;
     }
 }
