@@ -26,6 +26,9 @@ INSERT INTO CUSTOMER(custNatID, Name, CustAddress) values (12345678901234, 'Muha
 INSERT INTO Category(CatName) values ('Corolla_P1');
 INSERT INTO Car(ChasisID, catName) values ('x23f983vg', 'Corolla_P1');
 INSERT INTO Sales(CarID, CashOrInstallment, price, CustID, GNatID) 
-values('x23f983vg', 0, 1234, 12345678901234, 123);
+values('x23f983vg', 0, 1234, 12345678901234, 123), ('1234', 0, 1234, 12345678901234, 123);
 
 INSERT INTO Supplier(CustID) values (12345678901234);
+
+INSERT INTO TREASURY(name, isBank) values ('treasury1', 0);
+INSERT INTO Transactions(TreasuryID, Price) values(3, 5000);
