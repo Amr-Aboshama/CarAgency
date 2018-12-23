@@ -19,12 +19,12 @@ namespace Car_Agency
             try
             {
                 myConnection.Open();
-                Console.WriteLine("The DB connection is opened successfully");
+                //MessageBox.Show("The DB connection is opened successfully");
             }
             catch (Exception e)
             {
-                Console.WriteLine("The DB connection is failed");
-                Console.WriteLine(e.ToString());
+                MessageBox.Show("The DB connection is failed");
+                MessageBox.Show(e.ToString());
             }
         }
 
@@ -37,7 +37,7 @@ namespace Car_Agency
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
                 return 0;
             }
         }
@@ -63,7 +63,7 @@ namespace Car_Agency
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }
@@ -77,7 +77,7 @@ namespace Car_Agency
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
                 return 0;
             }
         }
@@ -90,7 +90,7 @@ namespace Car_Agency
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                MessageBox.Show(e.Message);
             }
         }
 
