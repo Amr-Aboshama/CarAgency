@@ -62,5 +62,68 @@ namespace Car_Agency
 		{
 			Owner.Show();
 		}
-	}
+
+        private void metroTile10_Click(object sender, EventArgs e)
+        {
+            userBankManager form = new userBankManager();
+            form.Show(this);
+            this.Hide();
+        }
+
+        private void metroTile8_Click(object sender, EventArgs e)
+        {
+            userCreditManager form = new userCreditManager();
+            form.Show(this);
+            this.Hide();
+        }
+
+        private void metroTile9_Click(object sender, EventArgs e)
+        {
+            userInventoryManager form = new userInventoryManager();
+            form.Show(this);
+            this.Hide();
+        }
+
+        private void metroTile7_Click(object sender, EventArgs e)
+        {
+            userSalesMan form = new userSalesMan();
+            form.Show(this);
+            this.Hide();
+        }
+
+        private void metroTile5_Click(object sender, EventArgs e)
+        {
+            userTreasuryManager form = new userTreasuryManager();
+            form.Show(this);
+            this.Hide();
+        }
+
+        private void metroTile11_Click(object sender, EventArgs e)
+        {
+            ViewAllEmployees form = new ViewAllEmployees();
+            form.Show(this);
+            this.Hide();
+        }
+
+        private void metroTile13_Click(object sender, EventArgs e)
+        {
+            ViewAllUsers form = new ViewAllUsers();
+            form.Show(this);
+            this.Hide();
+        }
+
+        private void metroTile14_Click(object sender, EventArgs e)
+        {
+            ViewAllCars form = new ViewAllCars();
+            form.Show(this);
+            this.Hide();
+        }
+
+        private void metroTile12_Click(object sender, EventArgs e)
+        {
+            Statistics form = new Statistics();
+            form.Show(this);
+            this.Hide();
+        }
+    }
 }
