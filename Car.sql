@@ -6,8 +6,7 @@ use CarAgencyDB
 
 create table Jobs
 (
-ID int IDENTITY(1,1) primary key,
-Name nvarChar(30) not null,
+Name nvarChar(50)	primary key
 );
 
 create table Employee
@@ -15,9 +14,9 @@ create table Employee
 EmpNatID decimal(14,0) primary key,
 Name nvarchar(30) not null,
 Address nvarchar(50),
-JobID int,
+JobName nvarchar(50),
 salary decimal(9, 2)
-foreign key (JobID) references Jobs(ID) on delete set null on update set null
+foreign key (JobName) references Jobs(Name) on delete set null on update cascade
 );
 
 create table EmployeePhones
@@ -51,9 +50,9 @@ foreign key (StoreEmpID) references Employee(EmpNatID) on delete set null on upd
 create table UserBasic
 (
 Username varchar(20) primary key,			/* Username must be in English*/
-Password varchar(64) not null,				/* Password will be resized according to hashing algorithm*/
-EmpID decimal(14,0) not null,
-foreign key (EmpID) references Employee(EmpNatID) on delete no action on update no action
+Password varchar(100) not null,				/* Password will be resized according to hashing algorithm*/
+EmpID decimal(14,0),
+foreign key (EmpID) references Employee(EmpNatID) on delete set null on update cascade
 );
 
 create table Customer
@@ -87,7 +86,7 @@ foreign key (CustID) references Customer(CustNatID)	on delete cascade on update 
 create table Currency	/*To store the currencies that are used in the company,*/
 (						/*we can group by a currency later*/
 CurrCode char(3) primary key,	/*such as EGP and USD*/
-EGPPrice decimal(9, 4)			/*can be used later*/
+EGPPrice decimal(9, 2)			/*can be used later*/
 );
 
 create table Category	/*number of cars in a category is derived from the cars that refer to that category*/
@@ -104,14 +103,14 @@ foreign key(Currency) references Currency
 
 create table Car
 (
-ChasisID varchar(20) primary key,
-MotorNum varchar(20) unique,
-Color nvarchar(20),
-CatName nvarchar(20),
+ChassisID varchar(20) primary key,
+MotorNum varchar(20) unique not null,
+Color nvarchar(20) not null,
+CatName nvarchar(20) not null,
 StoreID int,
 Status int default 0,	/*isn't sold initially*/
 foreign key (StoreID) references Store(StoreID) on delete set null on update cascade,
-foreign key (CatName) references Category(CatName) on delete set null on update cascade
+foreign key (CatName) references Category(CatName) on update cascade
 );
 
 create table CarRequest
@@ -139,39 +138,36 @@ isBank bit
 create table Transactions
 (
 TreasuryID int not null,
-price decimal(12, 4) not null,
-Currency char(3) default 'EGP',
 EmpID decimal(14,0),
-Notes nvarchar(1000),
 TransDate datetime default getdate(),
 TransactionID int IDENTITY(1,1) primary key,
-foreign key (Currency) references Currency,
 foreign key (EmpID) references Employee(EmpNatID) on delete set null on update cascade,
 foreign key (TreasuryID) references Treasury(TreasuryID) on delete cascade on update cascade
 );
 
 create table Purchases 
 (
-CarID varchar(20) not null,
-price decimal(12, 4) not null,
+CarID varchar(20) not null unique,
+Price decimal(12, 2) not null,
 Currency char(3) default 'EGP',
 EmpID decimal(14,0),
-SupID int,
-TransID int,
+SupID int not null,
+TransID int unique,
 PurchaseDate datetime default getdate(),
 PurchaseID int IDENTITY(1,1) primary key,
 foreign key (Currency) references Currency,
 foreign key (EmpID) references Employee(EmpNatID) on delete set null on update cascade,
-foreign key (CarID) references Car(ChasisID),
+foreign key (CarID) references Car(ChassisID),
 foreign key (TransID) references Transactions(TransactionID),
-foreign key (SupID) references Supplier(SupID) on delete set null on update cascade,
+foreign key (SupID) references Supplier(SupID) on update cascade,
+foreign key (Currency) references Currency(Currcode) on delete set default on update cascade
 );
 
 create table Sales
 (
-CarID varchar(20) not null,
+CarID varchar(20) not null unique,
 CashOrInstallment bit not null,
-price decimal(12, 4) not null,
+Price decimal(12, 2) not null,
 Currency char(3) default 'EGP',
 CustID decimal(14, 0) not null,
 GNatID decimal(14, 0) not null,	/*guarantor national ID*/
@@ -179,14 +175,26 @@ GName nvarchar(30),
 GPhone decimal(14, 0),
 GAddress nvarchar(50),
 EmpID decimal(14,0),
-TransID int,
+TransID int unique,
 SaleDate datetime default getdate(),
 SaleID int IDENTITY(1,1) primary key,
 foreign key (Currency) references Currency,
-foreign key (CarID) references Car(ChasisID) on update cascade,
+foreign key (CarID) references Car(ChassisID) on delete cascade on update cascade,
 foreign key (CustID) references Customer(CustNatID) on update cascade,
 foreign key (EmpID) references Employee(EmpNatID),
 foreign key (TransID) references Transactions(TransactionID),
+foreign key (Currency) references Currency(Currcode) on delete set default on update cascade
+);
+
+create table OtherTransaction
+(
+ID int Identity(1,1) primary key,
+transID int unique,
+Price decimal(9, 2) not null,
+Currency char(3) default 'EGP',
+Notes nvarchar(1000),
+foreign key (transID) references Transactions(TransactionID) on delete no action on update cascade,
+foreign key (Currency) references Currency(Currcode)
 );
 
 create table Installment
@@ -206,17 +214,16 @@ foreign key (SaleID) references Sales(SaleID) on delete cascade on update cascad
 create table Cheque
 (
 ChequeID varchar(20) primary key,
-price decimal(12, 4) not null,
+Price decimal(12, 2) not null,
 Currency char(3) default 'EGP',
 CustID decimal(14, 0) not null,
 CustomerBank nvarchar(30)not null,
 DueDate datetime not null,
 DelayPenalty decimal(12, 2) not null,
-RecordDate datetime default getdate(),
 Notes nvarchar(2000),
-Status int default 0,
 InstallmentID int,	/*it can be null because a cheque can be made without an installment*/
-TransID int,
+TransID int unique,
+RecordDate datetime default getdate(),
 foreign key (Currency) references Currency,
 foreign key (CustID) references Customer(CustNatID) on delete cascade on update cascade,
 foreign key (TransID) references Transactions(TransactionID) on delete cascade on update cascade,
@@ -225,10 +232,21 @@ foreign key (InstallmentID) references Installment(InstallmentID),
 
 create table UserPrivileges
 (
-Username varchar(20),
-JobID int,
-primary key(Username,JobID),
+Username varchar(20) not null,
+JobName nvarchar(50) not null,
 foreign key (Username) references UserBasic(Username) on delete cascade on update cascade,
-foreign key (JobID) references Jobs(ID) on delete cascade on update cascade
+foreign key (JobName) references Jobs(Name) on delete no action on update no action
 );
 
+create table CallRecords
+(
+custID decimal(14,0) not null,
+empID decimal(14,0),
+notes nvarchar(2000),
+callID int identity(1,1) primary key,
+foreign key (custID) references customer(custNatID) on delete cascade on update cascade,
+foreign key (empID) references employee(empNAtID) on delete set null on update cascade,
+);
+
+
+INSERT INTO Jobs values('--All--');
