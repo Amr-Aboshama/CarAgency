@@ -28,7 +28,7 @@ namespace Car_Agency
                 password.Clear();
                 return;
             }
-            showPrivileges Pr = new showPrivileges(username.Text);
+            showPanel Pr = new showPanel(username.Text);
             Pr.Show(this);
             username.Clear();
             password.Clear();
