@@ -17,11 +17,11 @@ namespace Car_Agency
         private int id;
         private string customer;
         Controller controllerObj;
-        public RequestCategory(string username)
+        public RequestCategory()
         {
             InitializeComponent();
             controllerObj = new Controller();
-            user = username;
+            user = Login.LoginUsername;
             BrandmetroComboBox.ValueMember = "Brand";
             BrandmetroComboBox.DisplayMember = "Brand";
             BrandmetroComboBox.DataSource = controllerObj.SelectBrands();
@@ -29,7 +29,7 @@ namespace Car_Agency
 
             CustmetroComboBox.ValueMember = "CustNatID";
             CustmetroComboBox.DisplayMember = "Name";
-            CustmetroComboBox.DataSource = controllerObj.SelectCutomers();
+            CustmetroComboBox.DataSource = controllerObj.SelectCustomers();
             CustmetroComboBox.SelectedValue = -1;
             CustmetroComboBox.Enabled = false;
         }
@@ -37,7 +37,7 @@ namespace Car_Agency
         //view more info of the selected category
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Category v = new Category(Convert.ToString(listBox1.SelectedValue),user);
+            Category v = new Category(Convert.ToString(listBox1.SelectedValue));
             v.Show();
         }
 
@@ -45,7 +45,7 @@ namespace Car_Agency
         private void InsertMetroButton_Click(object sender, EventArgs e)
         {
             // 1 for salesman
-            Category v = new Category("",user);
+            Category v = new Category("");
             v.Show();
         }
 

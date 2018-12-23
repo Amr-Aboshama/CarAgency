@@ -396,13 +396,7 @@ namespace Car_Agency
                          + "Currency ='" + currency + "' where CatName ='" + name +"';";
             return dbMan.ExecuteNonQuery(query);
         }
-
-        public DataTable SelecAllCurrency()
-        {
-            string query = "select distinct CurrCode from Currency";
-            return dbMan.ExecuteReader(query);
-        }
-
+        
         public DataTable SelectAvailableCars(string catName, string brand, string model)
         {
             string query = "SELECT ChasisID,Color,Name from Car c,Store s,Category t "

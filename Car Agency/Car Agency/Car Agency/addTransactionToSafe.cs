@@ -16,12 +16,12 @@ namespace Car_Agency
         int priv, treasuryId;
         decimal empId;
         Controller controllerObj;
-        public addTransactionToSafe(string Username)
+        public addTransactionToSafe()
         {
             InitializeComponent();
             controllerObj = new Controller();
-            priv = controllerObj.getPriv(Username); // get Privilage
-            empId = controllerObj.getEmpIDByUser(Username);   // get Employee Id
+            priv = controllerObj.getPriv(Login.LoginUsername); // get Privilage
+            empId = controllerObj.getEmpIDByUser(Login.LoginUsername);   // get Employee Id
 
             DataTable dt = controllerObj.getTreasuries(2);
             metroComboBox1.DataSource = dt;

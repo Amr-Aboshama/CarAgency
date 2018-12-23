@@ -11,10 +11,10 @@ using MetroFramework.Forms;
 
 namespace Car_Agency
 {
-    public partial class Form1 : MetroForm
+    public partial class Statistics : MetroForm
     {
         Controller controllerObj;
-        public Form1()
+        public Statistics()
         {
             InitializeComponent();
             controllerObj = new Controller();

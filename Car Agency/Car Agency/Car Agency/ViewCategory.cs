@@ -15,11 +15,11 @@ namespace Car_Agency
     {
         private string user;
         Controller controllerObj;
-        public ViewCategory(string username)
+        public ViewCategory()
         {
             InitializeComponent();
             controllerObj = new Controller();
-            user = username;
+            user = Login.LoginUsername;
             BrandComboBox.ValueMember = "Brand";
             BrandComboBox.DisplayMember = "Brand";
             BrandComboBox.DataSource = controllerObj.SelectBrands();
@@ -51,14 +51,14 @@ namespace Car_Agency
         private void CatlistBox_DoubleClick(object sender, EventArgs e)
         {
           
-            Category categoryFrom = new Category(Convert.ToString(CatlistBox.SelectedValue),user);
+            Category categoryFrom = new Category(Convert.ToString(CatlistBox.SelectedValue));
             categoryFrom.Show();
         }
 
         //insert new category
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            Category categoryFrom = new Category("",user);
+            Category categoryFrom = new Category("");
             categoryFrom.Show();
         }
 

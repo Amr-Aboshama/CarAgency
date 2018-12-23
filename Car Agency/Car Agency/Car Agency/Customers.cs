@@ -26,14 +26,14 @@ namespace Car_Agency
             CustmetroComboBox.ValueMember = "CustNatID";
             CustmetroComboBox.DisplayMember = "Name";
             CustmetroComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            CustmetroComboBox.DataSource = controllerObj.SelectCutomers();
+            CustmetroComboBox.DataSource = controllerObj.SelectCustomers();
             CustmetroComboBox.SelectedValue = -1;
 
             //load customer combobox (view customers)
             metroComboBox1.DisplayMember = "Name";
             metroComboBox1.ValueMember = "CustNatID";
             metroComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            metroComboBox1.DataSource = controllerObj.SelectCutomers();
+            metroComboBox1.DataSource = controllerObj.SelectCustomers();
             metroComboBox1.SelectedValue = -1;                    
 
             metroGrid1.ReadOnly = true;
@@ -123,7 +123,7 @@ namespace Car_Agency
         {
             CustmetroComboBox.ValueMember = "CustNatID";
             CustmetroComboBox.DisplayMember = "Name";
-            CustmetroComboBox.DataSource = controllerObj.SelectCutomers();
+            CustmetroComboBox.DataSource = controllerObj.SelectCustomers();
             CustmetroComboBox.SelectedValue = -1;
         }
 
@@ -133,7 +133,7 @@ namespace Car_Agency
             k = 1;
             metroComboBox1.DisplayMember = "Name";
             metroComboBox1.ValueMember = "CustNatID";
-            metroComboBox1.DataSource = controllerObj.SelectCutomers();
+            metroComboBox1.DataSource = controllerObj.SelectCustomers();
             metroComboBox1.SelectedValue = -1;
         }
 

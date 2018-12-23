@@ -1,6 +1,6 @@
 ﻿namespace Car_Agency
 {
-    partial class Form1
+    partial class Statistics
     {
         /// <summary>
         /// Required designer variable.
@@ -41,80 +41,88 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(482, 158);
+            this.metroLabel1.Location = new System.Drawing.Point(362, 128);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(110, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(108, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Maximum Salary";
             // 
             // MaxSalaryLabel
             // 
             this.MaxSalaryLabel.AutoSize = true;
-            this.MaxSalaryLabel.Location = new System.Drawing.Point(667, 158);
+            this.MaxSalaryLabel.Location = new System.Drawing.Point(500, 128);
+            this.MaxSalaryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MaxSalaryLabel.Name = "MaxSalaryLabel";
-            this.MaxSalaryLabel.Size = new System.Drawing.Size(110, 20);
+            this.MaxSalaryLabel.Size = new System.Drawing.Size(108, 19);
             this.MaxSalaryLabel.TabIndex = 1;
             this.MaxSalaryLabel.Text = "Maximum Salary";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(14, 90);
+            this.metroLabel2.Location = new System.Drawing.Point(10, 73);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(152, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(144, 19);
             this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Number Of Employees";
             // 
             // EmpNumLabel
             // 
             this.EmpNumLabel.AutoSize = true;
-            this.EmpNumLabel.Location = new System.Drawing.Point(253, 90);
+            this.EmpNumLabel.Location = new System.Drawing.Point(190, 73);
+            this.EmpNumLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EmpNumLabel.Name = "EmpNumLabel";
-            this.EmpNumLabel.Size = new System.Drawing.Size(152, 20);
+            this.EmpNumLabel.Size = new System.Drawing.Size(144, 19);
             this.EmpNumLabel.TabIndex = 3;
             this.EmpNumLabel.Text = "Number Of Employees";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(14, 158);
+            this.metroLabel3.Location = new System.Drawing.Point(10, 128);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(96, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(94, 19);
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Sum Of Salary";
             // 
             // salaryLabel
             // 
             this.salaryLabel.AutoSize = true;
-            this.salaryLabel.Location = new System.Drawing.Point(253, 158);
+            this.salaryLabel.Location = new System.Drawing.Point(190, 128);
+            this.salaryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.salaryLabel.Name = "salaryLabel";
-            this.salaryLabel.Size = new System.Drawing.Size(45, 20);
+            this.salaryLabel.Size = new System.Drawing.Size(43, 19);
             this.salaryLabel.TabIndex = 5;
             this.salaryLabel.Text = "salary";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(14, 235);
+            this.metroLabel4.Location = new System.Drawing.Point(10, 191);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(170, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(164, 19);
             this.metroLabel4.TabIndex = 6;
             this.metroLabel4.Text = "Number Of Available Cars";
             // 
             // carLabel
             // 
             this.carLabel.AutoSize = true;
-            this.carLabel.Location = new System.Drawing.Point(253, 235);
+            this.carLabel.Location = new System.Drawing.Point(190, 191);
+            this.carLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.carLabel.Name = "carLabel";
-            this.carLabel.Size = new System.Drawing.Size(170, 20);
+            this.carLabel.Size = new System.Drawing.Size(164, 19);
             this.carLabel.TabIndex = 7;
             this.carLabel.Text = "Number Of Available Cars";
             // 
-            // Form1
+            // Statistics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.carLabel);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.salaryLabel);
@@ -123,8 +131,10 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.MaxSalaryLabel);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "Statistics";
+            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
+            this.Text = "Statistics";
             this.ResumeLayout(false);
             this.PerformLayout();
 

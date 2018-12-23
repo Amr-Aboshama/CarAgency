@@ -134,6 +134,12 @@ namespace Car_Agency
                         }
                     }
                 }
+                password.Clear();
+                repassword.Clear();
+                username.Clear();
+                employee.SelectedValue = 0;
+                foreach (ListViewItem i in privileges.CheckedItems)
+                    i.Checked = false;
             }
             catch(Exception E1)
             {

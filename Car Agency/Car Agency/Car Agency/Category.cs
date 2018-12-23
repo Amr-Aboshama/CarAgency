@@ -21,11 +21,11 @@ namespace Car_Agency
         private string GetUsername { get { return Username; } }
 
         Controller controllerObj;
-        public Category(string catName, string username)
+        public Category(string catName)
         {
             InitializeComponent();
             CatName = catName;
-            Username = username;
+            Username = Login.LoginUsername;
             controllerObj = new Controller();
 
             //update mode

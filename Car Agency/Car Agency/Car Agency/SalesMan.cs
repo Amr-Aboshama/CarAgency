@@ -15,11 +15,11 @@ namespace Car_Agency
     {
         private string user;
         Controller controllerObj;
-        public SalesMan(string username)
+        public SalesMan()
         {
             InitializeComponent();
             controllerObj = new Controller();
-            user = username;
+            user = Login.LoginUsername;
         }
 
         //customers form
@@ -39,14 +39,14 @@ namespace Car_Agency
         //request car
         private void ReqTile_Click(object sender, EventArgs e)
         {
-            RequestCategory r = new RequestCategory(user);
+            RequestCategory r = new RequestCategory();
             r.Show();
         }
 
         //view category
         private void CatmetroTile1_Click(object sender, EventArgs e)
         {
-            ViewCategory w = new ViewCategory(user);
+            ViewCategory w = new ViewCategory();
             w.Show();
         }
     }
