@@ -947,5 +947,29 @@ namespace Car_Agency
             string query = "SELECT JobName FROM Employee WHERE EmpNatID=" + empID + ";";
             return (string)dbMan.ExecuteScalar(query);
         }
+
+        public DataTable SelectAllEmployees()
+        {
+            string query = "select EmpNatID as 'National ID', Name, Address, JobName as Job, Salary from Employee;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllCars()
+        {
+            string query = "select chassisID as 'Chassis Number', MotorNum as 'Motor Number', Color, CatName as 'Category Name', "
+                + "(case when status = 0 then 'sold' "
+                + "when status = 1 then 'available' "
+                + "when status = 2 then 'reserved' end) as Status, "
+                + "Name as 'Store Name' from car left outer join Store on Car.StoreID = Store.StoreID;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllUsers()
+        {
+            string query = "select UserBasic.Username, Name, UserPrivileges.JobName as 'Job Name' from UserBasic " +
+                "join Employee on EmpNatID = EmpID " +
+                "join UserPrivileges on UserPrivileges.Username = UserBasic.Username order by Name;";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }
