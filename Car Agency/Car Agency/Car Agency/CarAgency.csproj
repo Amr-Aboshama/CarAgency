@@ -61,6 +61,12 @@
     <Compile Include="AddCheque.Designer.cs">
       <DependentUpon>AddCheque.cs</DependentUpon>
     </Compile>
+    <Compile Include="addEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addEmployee.Designer.cs">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddInstallment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +79,41 @@
     <Compile Include="AddJob.Designer.cs">
       <DependentUpon>AddJob.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSale.cs">
+    <Compile Include="addStore.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSale.Designer.cs">
-      <DependentUpon>AddSale.cs</DependentUpon>
+    <Compile Include="addStore.Designer.cs">
+      <DependentUpon>addStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addTransactionToBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addTransactionToBank.Designer.cs">
+      <DependentUpon>addTransactionToBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addTransactionToSafe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addTransactionToSafe.Designer.cs">
+      <DependentUpon>addTransactionToSafe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addUser.Designer.cs">
+      <DependentUpon>addUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AvailableCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvailableCars.Designer.cs">
+      <DependentUpon>AvailableCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="CreditManager.cs">
@@ -86,7 +122,25 @@
     <Compile Include="CreditManager.Designer.cs">
       <DependentUpon>CreditManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers.Designer.cs">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBManager.cs" />
+    <Compile Include="Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryManager.Designer.cs">
+      <DependentUpon>InventoryManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,17 +155,47 @@
     <Compile Include="PurchaseCar.Designer.cs">
       <DependentUpon>PurchaseCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="RequestCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestCategory.Designer.cs">
+      <DependentUpon>RequestCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesMan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesMan.Designer.cs">
+      <DependentUpon>SalesMan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="showPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showPanel.Designer.cs">
+      <DependentUpon>showPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewBank.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="viewBank.designer.cs">
       <DependentUpon>viewBank.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCategory.Designer.cs">
+      <DependentUpon>ViewCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewCheques.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewCheques.Designer.cs">
       <DependentUpon>ViewCheques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewEmployee.Designer.cs">
+      <DependentUpon>viewEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewInstallment.cs">
       <SubType>Form</SubType>
@@ -125,8 +209,17 @@
     <Compile Include="viewSafe.designer.cs">
       <DependentUpon>viewSafe.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewUser.Designer.cs">
+      <DependentUpon>viewUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCheque.resx">
       <DependentUpon>AddCheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addEmployee.resx">
+      <DependentUpon>addEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddInstallment.resx">
       <DependentUpon>AddInstallment.cs</DependentUpon>
@@ -134,11 +227,35 @@
     <EmbeddedResource Include="AddJob.resx">
       <DependentUpon>AddJob.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddSale.resx">
-      <DependentUpon>AddSale.cs</DependentUpon>
+    <EmbeddedResource Include="addStore.resx">
+      <DependentUpon>addStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addTransactionToBank.resx">
+      <DependentUpon>addTransactionToBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addTransactionToSafe.resx">
+      <DependentUpon>addTransactionToSafe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addUser.resx">
+      <DependentUpon>addUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvailableCars.resx">
+      <DependentUpon>AvailableCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreditManager.resx">
       <DependentUpon>CreditManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryManager.resx">
+      <DependentUpon>InventoryManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -155,17 +272,35 @@
     <EmbeddedResource Include="PurchaseCar.resx">
       <DependentUpon>PurchaseCar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RequestCategory.resx">
+      <DependentUpon>RequestCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesMan.resx">
+      <DependentUpon>SalesMan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showPanel.resx">
+      <DependentUpon>showPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="viewBank.resx">
       <DependentUpon>viewBank.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewCategory.resx">
+      <DependentUpon>ViewCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewCheques.resx">
       <DependentUpon>ViewCheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewEmployee.resx">
+      <DependentUpon>viewEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewInstallment.resx">
       <DependentUpon>ViewInstallment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewSafe.resx">
       <DependentUpon>viewSafe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewUser.resx">
+      <DependentUpon>viewUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

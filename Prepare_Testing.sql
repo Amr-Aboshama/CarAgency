@@ -21,7 +21,6 @@ INSERT INTO UserPrivileges values('Amr','Purchases Manager');
 INSERT INTO UserPrivileges VALUES('TEST1','Sales Manager');
 INSERT INTO UserPrivileges VALUES('TEST2','Purchases Manager');
 INSERT INTO UserPrivileges VALUES('TEST3','Sales Manager');
-
 INSERT INTO transactions(treasuryID) values(1), (1), (2), (2);
 insert into OtherTransaction(TransID, Price, Notes) values (2, 150000.0, 'This is a general transaction');
 
@@ -34,6 +33,3 @@ insert into purchases(CarID, Price, SupID, transID) values ('x23f983vg', -300000
 
 INSERT INTO Sales(CarID, CashOrInstallment, price, CustID, GNatID, TransID) 
 values('x23f983vg', 0, 1234, 12345678901234, 123, 1);
-INSERT INTO Treasury(Name) VALUES ('Al-Ahly');
-INSERT INTO Transactions(TreasuryID, Price) values(1, 1000000);
-INSERT INTO Transactions(TreasuryID, Price) values(2, 1000000);

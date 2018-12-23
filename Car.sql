@@ -132,7 +132,6 @@ Name nvarchar(25) not null unique,
 BankAccID nvarchar(30),
 BankBranch nvarchar(30),
 BankAccName nvarchar(30),
-isBank bit
 );
 
 create table Transactions
@@ -160,6 +159,7 @@ foreign key (EmpID) references Employee(EmpNatID) on delete set null on update c
 foreign key (CarID) references Car(ChassisID),
 foreign key (TransID) references Transactions(TransactionID),
 foreign key (SupID) references Supplier(SupID) on update cascade,
+foreign key (Currency) references Currency(Currcode) on delete set default on update cascade
 );
 
 create table Sales
@@ -182,6 +182,7 @@ foreign key (CarID) references Car(ChassisID) on delete cascade on update cascad
 foreign key (CustID) references Customer(CustNatID) on update cascade,
 foreign key (EmpID) references Employee(EmpNatID),
 foreign key (TransID) references Transactions(TransactionID),
+foreign key (Currency) references Currency(Currcode) on delete set default on update cascade
 );
 
 create table OtherTransaction
@@ -235,6 +236,5 @@ JobName nvarchar(50) not null,
 foreign key (Username) references UserBasic(Username) on delete cascade on update cascade,
 foreign key (JobName) references Jobs(Name) on delete no action on update no action
 );
-
 
 INSERT INTO Jobs values('--All--');

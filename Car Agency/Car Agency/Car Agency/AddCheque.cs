@@ -44,7 +44,7 @@ namespace Car_Agency
             {
                 CurrencyComboBox.DataSource = controllerObj.SelecAllCurrency();
                 CurrencyComboBox.ValueMember = CurrencyComboBox.DisplayMember = "CurrCode";
-                CustomerComboBox.DataSource = controllerObj.SelectCutomers();
+                CustomerComboBox.DataSource = controllerObj.SelectCustomers();
                 CustomerComboBox.ValueMember = "CustNatID";
                 CustomerComboBox.DisplayMember = "Name";
             }
