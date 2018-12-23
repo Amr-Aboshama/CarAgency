@@ -173,6 +173,24 @@
     <Compile Include="showPanel.Designer.cs">
       <DependentUpon>showPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewAllCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAllCars.Designer.cs">
+      <DependentUpon>ViewAllCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAllEmployees.Designer.cs">
+      <DependentUpon>ViewAllEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAllUsers.Designer.cs">
+      <DependentUpon>ViewAllUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewBank.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +298,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="showPanel.resx">
       <DependentUpon>showPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAllCars.resx">
+      <DependentUpon>ViewAllCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAllEmployees.resx">
+      <DependentUpon>ViewAllEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAllUsers.resx">
+      <DependentUpon>ViewAllUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewBank.resx">
       <DependentUpon>viewBank.cs</DependentUpon>

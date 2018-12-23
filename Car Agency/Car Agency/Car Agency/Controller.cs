@@ -383,13 +383,8 @@ namespace Car_Agency
 
         public int GetNewRequestID()
         {
-            string query = "select max(ReqID) from CarRequest;";
-            int? id = dbMan.ExecuteScalar(query) as int?;
-
-            if (id == null)
-                return 1;
-            else
-                return (int)id + 1;
+            string query = "select IDENT_CURRENT from CarRequest;";
+            return Convert.ToInt32(dbMan.ExecuteScalar(query));
         }
 
         public int UpdateCategory(string name,string newName, string brand, string type, string model, string specs, Decimal price, string currency)
@@ -662,6 +657,30 @@ namespace Car_Agency
         public DataTable getAllPrivileges()
         {
             string query = "select DISTINCT JOBNAME from UserPrivileges";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllEmployees()
+        {
+            string query = "select EmpNatID as 'National ID', Name, Address, JobName as Job, Salary from Employee;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllCars()
+        {
+            string query = "select chassisID as 'Chassis Number', MotorNum as 'Motor Number', Color, CatName as 'Category Name', "
+                + "(case when status = 0 then 'sold' "
+                + "when status = 1 then 'available' "
+                + "when status = 2 then 'reserved' end) as Status, "
+                + "Name as 'Store Name' from car left outer join Store on Car.StoreID = Store.StoreID;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllUsers()
+        {
+            string query = "select UserBasic.Username, Name, UserPrivileges.JobName as 'Job Name' from UserBasic " +
+                "join Employee on EmpNatID = EmpID " +
+                "join UserPrivileges on UserPrivileges.Username = UserBasic.Username order by Name;";
             return dbMan.ExecuteReader(query);
         }
     }
