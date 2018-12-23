@@ -83,7 +83,7 @@ namespace Car_Agency
             string query = "select installmentID as 'Installment ID', SaleID as 'Sale ID', submittedPrice as 'Submitted Price', "
                 + "PriceOfOneInstallment as'Price of one Installment', Factor, Currency, ArchivePlace as 'Archive Place', "
                 + "DrawerNum as'Drawer Number', "
-                + "(case when exists(select transID from cheque C where C.installmentID = I.installmentID and TransID is null) "
+                + "(case when exists(select * from cheque C where C.installmentID = I.installmentID and TransID is null) "
                 + "then 'No' else 'Yes' end) as 'Completed' from Installment I order by installmentID desc; ";
             return dbMan.ExecuteReader(query);
         }
@@ -112,15 +112,19 @@ namespace Car_Agency
 
         public DataTable viewSafeTransactions()
         {
-            string query = "select Treasury.Name as 'Safe Name', transID as 'Transaction ID', Price, Currency, "
-                + "E.name as 'Employee Name', transDate as 'Date' from( "
+            string query = "select Treasury.Name as 'Safe Name', TotalTransactions.transID as 'Transaction ID', TotalTransactions.Price, TotalTransactions.Currency, "
+                + "E.name as 'Employee Name', transDate as 'Date', Notes, "
+                + "(case when exists(select * from sales where transID = TransactionID and transID is not null) then 'Sale' "
+                + "when exists(select * from Purchases where transID = TransactionID and transID is not null) then 'Purchase' "
+                + "when exists(select * from OtherTransaction where transID = TransactionID and transID is not null) then 'General' "
+                + "else 'Cheque' end) as 'Type' from( "
                 + "(select Price, Currency, P.transID from Purchases P where P.transID is not null) union "
                 + "(select Price, Currency, S.transID from Sales S where S.transID is not null) union "
                 + "(select Price, Currency, T.transID from OtherTransaction T where T.transID is not null) union "
                 + "(select Price, Currency, C.transID from Cheque C where C.TransID is not null)) "
                 + "as TotalTransactions join transactions on transID = TransactionID "
-                + "left outer join Employee E on EmpNatID = EmpID "
-                + "join Treasury on Treasury.TreasuryID = transactions.TreasuryID where BankAccID is null;";
+                + "left outer join Employee E on EmpNatID = EmpID left outer join OtherTransaction on OtherTransaction.transID = transactionID "
+                + "join Treasury on Treasury.TreasuryID = transactions.TreasuryID where BankAccID is null order by 'Date' desc;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -140,14 +144,18 @@ namespace Car_Agency
         {
             string query = "select Treasury.Name as 'Bank Name', BankBranch as 'Bank Branch', BankAccName as 'Bank Account Name', "
                 + "BankAccID as 'Bank Account ID', TotalTransactions.transID as 'Transaction ID', TotalTransactions.Price, "
-                + "TotalTransactions.Currency, E.name as 'Employee Name', transDate as 'Date', Notes from( "
+                + "TotalTransactions.Currency, E.name as 'Employee Name', transDate as 'Date', Notes, "
+                + "(case when exists(select * from sales where transID = TransactionID and transID is not null) then 'Sale' "
+                + "when exists(select * from Purchases where transID = TransactionID and transID is not null) then 'Purchase' "
+                + "when exists(select * from OtherTransaction where transID = TransactionID and transID is not null) then 'General' "
+                + "else 'Cheque' end) as 'Type' from( "
                 + "(select Price, Currency, P.transID from Purchases P where P.transID is not null) union "
                 + "(select Price, Currency, S.transID from Sales S where S.transID is not null) union "
                 + "(select Price, Currency, T.transID from OtherTransaction T where T.transID is not null) union "
                 + "(select Price, Currency, C.transID from Cheque C where C.TransID is not null)) "
                 + "as TotalTransactions join transactions on transID = TransactionID "
                 + "left outer join Employee E on EmpNatID = EmpID left outer join OtherTransaction on OtherTransaction.transID = transactionID "
-                + "join Treasury on Treasury.TreasuryID = transactions.TreasuryID where BankAccID is not null;";
+                + "join Treasury on Treasury.TreasuryID = transactions.TreasuryID where BankAccID is not null order by 'Date' desc;";
             return dbMan.ExecuteReader(query);
         }
 
