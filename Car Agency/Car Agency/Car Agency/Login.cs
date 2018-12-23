@@ -14,6 +14,7 @@ namespace Car_Agency
     public partial class Login : MetroForm
     {
         Controller controllerObj;
+        public static string LoginUsername;
         public Login()
         {
             InitializeComponent();
@@ -28,7 +29,9 @@ namespace Car_Agency
                 password.Clear();
                 return;
             }
-            showPrivileges Pr = new showPrivileges(username.Text);
+            LoginUsername = username.Text;
+            
+            showPanel Pr = new showPanel();
             Pr.Show(this);
             username.Clear();
             password.Clear();

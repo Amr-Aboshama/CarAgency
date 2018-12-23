@@ -15,11 +15,11 @@ namespace Car_Agency
     {
         Controller controllerObj;
         string Username;
-        public showPanel(string User)
+        public showPanel()
         {
             InitializeComponent();
             controllerObj = new Controller();
-            Username = User;
+            Username = Login.LoginUsername;
         }
 
         private void showPrivileges_Load(object sender, EventArgs e)
