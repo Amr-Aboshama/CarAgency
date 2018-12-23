@@ -83,7 +83,7 @@ namespace Car_Agency
                 MessageBox.Show("Please enter a valid value into \"Price\" field");
                 return;
             }
-            price = Math.Abs(price);
+            price = -Math.Abs(price);
             string Currency = CurrencyComboBox.SelectedValue.ToString();
             int SupID = Convert.ToInt32(SupplierComboBox.SelectedValue);
 

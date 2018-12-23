@@ -82,31 +82,54 @@ namespace Car_Agency
 
         public DataTable viewSafeBalance()
         {
-            string query = "SELECT SUM(Price) AS Balance, Currency FROM Transactions WHERE TREASURYID = 1 group by(Currency);";
+            string query = "select Name as 'Safe Name', sum(Price) as Balance, Currency from( "
+                + "(select Price, Currency, P.transID from Purchases P where P.transID is not null) union "
+                + "(select Price, Currency, S.transID from Sales S where S.transID is not null) union "
+                + "(select Price, Currency, T.transID from OtherTransaction T where T.transID is not null) union "
+                + "(select Price, Currency, C.transID from Cheque C where C.TransID is not null)) "
+                + "as TotalTransactions join transactions on transID = TransactionID "
+                + "join Treasury on Treasury.TreasuryID = transactions.TreasuryID where BankAccID is null group by Name, Currency;";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable viewSafeTransactions()
         {
-            string query = "SELECT Price, Currency, TransDate as Transaction_Date, Name as Employee_Name, Notes " +
-                "FROM Transactions LEFT OUTER JOIN Employee ON EMPID = EmpNatID " +
-                "WHERE TreasuryID = 1";
+            string query = "select Treasury.Name as 'Safe Name', transID as 'Transaction ID', Price, Currency, "
+                + "E.name as 'Employee Name', transDate as 'Date' from( "
+                + "(select Price, Currency, P.transID from Purchases P where P.transID is not null) union "
+                + "(select Price, Currency, S.transID from Sales S where S.transID is not null) union "
+                + "(select Price, Currency, T.transID from OtherTransaction T where T.transID is not null) union "
+                + "(select Price, Currency, C.transID from Cheque C where C.TransID is not null)) "
+                + "as TotalTransactions join transactions on transID = TransactionID "
+                + "left outer join Employee E on EmpNatID = EmpID "
+                + "join Treasury on Treasury.TreasuryID = transactions.TreasuryID where BankAccID is null;";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable viewBankBalance()
         {
-            string query = "SELECT Name, SUM(Price) AS Balance, Currency FROM Transactions " +
-                "JOIN Treasury ON Treasury.TreasuryID = Transactions.TreasuryID where Treasury.TreasuryID != 1 " +
-                "GROUP BY Name, Currency;";
+            string query = "select Name as 'Bank Name', sum(Price) as Balance, Currency from( "
+                + "(select Price, Currency, P.transID from Purchases P where P.transID is not null) union "
+                + "(select Price, Currency, S.transID from Sales S where S.transID is not null) union "
+                + "(select Price, Currency, T.transID from OtherTransaction T where T.transID is not null) union "
+                + "(select Price, Currency, C.transID from Cheque C where C.TransID is not null)) "
+                + "as TotalTransactions join transactions on transID = TransactionID "
+                + "join Treasury on Treasury.TreasuryID = transactions.TreasuryID where BankAccID is not null group by Name, Currency;";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable viewBankTransactions()
         {
-            string query = "SELECT Price, Currency, TransDate as Transaction_Date, Name as Employee_Name, Notes " +
-                "FROM Transactions LEFT OUTER JOIN Employee ON EMPID = EmpNatID " +
-                "WHERE TreasuryID != 1";
+            string query = "select Treasury.Name as 'Bank Name', BankBranch as 'Bank Branch', BankAccName as 'Bank Account Name', "
+                + "BankAccID as 'Bank Account ID', TotalTransactions.transID as 'Transaction ID', TotalTransactions.Price, "
+                + "TotalTransactions.Currency, E.name as 'Employee Name', transDate as 'Date', Notes from( "
+                + "(select Price, Currency, P.transID from Purchases P where P.transID is not null) union "
+                + "(select Price, Currency, S.transID from Sales S where S.transID is not null) union "
+                + "(select Price, Currency, T.transID from OtherTransaction T where T.transID is not null) union "
+                + "(select Price, Currency, C.transID from Cheque C where C.TransID is not null)) "
+                + "as TotalTransactions join transactions on transID = TransactionID "
+                + "left outer join Employee E on EmpNatID = EmpID left outer join OtherTransaction on OtherTransaction.transID = transactionID "
+                + "join Treasury on Treasury.TreasuryID = transactions.TreasuryID where BankAccID is not null;";
             return dbMan.ExecuteReader(query);
         }
 

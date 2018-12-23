@@ -21,11 +21,15 @@ INSERT INTO UserPrivileges VALUES('TEST1',3);
 INSERT INTO UserPrivileges VALUES('TEST2',2);
 INSERT INTO UserPrivileges VALUES('TEST3',3);
 
+INSERT INTO transactions(treasuryID) values(1), (1), (2), (2);
+insert into OtherTransaction(TransID, Price, Notes) values (2, 150000.0, 'This is a general transaction');
+
 INSERT INTO CUSTOMER(custNatID, Name, CustAddress) values (12345678901234, 'Muhammad', 'bla-bla');
 INSERT INTO Category(CatName) values ('Corolla_P1');
 INSERT INTO Car(ChassisID, MotorNum, Color, catName) values ('x23f983vg', 'Red', 'nfe02lpavj323', 'Corolla_P1');
-INSERT INTO Sales(CarID, CashOrInstallment, price, CustID, GNatID) 
-values('x23f983vg', 0, 1234, 12345678901234, 123);
 
 INSERT INTO Supplier(CustID) values (12345678901234);
+insert into purchases(CarID, Price, SupID, transID) values ('x23f983vg', -30000000.0, 1, 3);
 
+INSERT INTO Sales(CarID, CashOrInstallment, price, CustID, GNatID, TransID) 
+values('x23f983vg', 0, 1234, 12345678901234, 123, 1);

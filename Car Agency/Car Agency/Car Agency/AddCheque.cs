@@ -58,12 +58,12 @@ namespace Car_Agency
                 MessageBox.Show("Please enter a valid value into \"Cheque ID\" field");
                 return;
             }
-            decimal price;
-            if (!decimal.TryParse(PriceTextBox.Text, out price))
+            if (!decimal.TryParse(PriceTextBox.Text, out decimal price))
             {
                 MessageBox.Show("Please enter a valid value into \"Price\" field");
                 return;
             }
+            price = Math.Abs(price);
             if(ForMeRadioButton.Checked==OnMeRadioButton.Checked) //they are both not checked
             {
                 MessageBox.Show("Please specify if the cheque is \"for you\" or \"On you\"");
