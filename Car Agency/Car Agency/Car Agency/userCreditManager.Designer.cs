@@ -1,6 +1,6 @@
 ﻿namespace Car_Agency
 {
-    partial class CreditManager
+    partial class userCreditManager
     {
         /// <summary>
         /// Required designer variable.

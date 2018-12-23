@@ -11,9 +11,9 @@ using MetroFramework.Forms;
 
 namespace Car_Agency
 {
-    public partial class CreditManager : MetroForm
+    public partial class userCreditManager : MetroForm
     {
-        public CreditManager()
+        public userCreditManager()
         {
             InitializeComponent();
         }

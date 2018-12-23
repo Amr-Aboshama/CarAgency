@@ -1,6 +1,6 @@
 ﻿namespace Car_Agency
 {
-    partial class SalesMan
+    partial class userSalesMan
     {
         /// <summary>
         /// Required designer variable.

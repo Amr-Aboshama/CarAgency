@@ -16,10 +16,10 @@ namespace Car_Agency
         Controller controllerObj = new Controller();
         ulong EmpID;
 
-        public PurchaseCar(ulong EmpID)
+        public PurchaseCar()
         {
             InitializeComponent();
-            this.EmpID = EmpID;
+            this.EmpID = (ulong)controllerObj.getEmpIDByUser(Login.LoginUsername);
             CurrencyComboBox.DataSource = controllerObj.SelecAllCurrency();
             CurrencyComboBox.ValueMember = CurrencyComboBox.DisplayMember = "CurrCode";
             SupplierComboBox.DataSource = controllerObj.SelectSuppliers();
