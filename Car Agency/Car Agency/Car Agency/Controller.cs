@@ -224,8 +224,36 @@ namespace Car_Agency
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public decimal MaxSalary()
+        {
+            string query = "select max(Salary) from Employee ";
+            return (decimal)dbMan.ExecuteScalar(query);
+        }
 
-      
+        public decimal SumSalary()
+        {
+            string query = "select sum(Salary) from Employee ";
+            return (decimal)dbMan.ExecuteScalar(query);
+        }
+
+        public int NumOfEmp()
+        {
+            string query = "select count(EmpNatID) from Employee ";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int NumOfAvailableCars()
+        {
+            string query = "select count(ChasisID) from Car where Status = 1 ";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+
+
+
+
+
+
 
         public void TerminateConnection()
         {
