@@ -51,13 +51,13 @@ namespace Car_Agency
         private void metroButton1_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection rows = metroGrid1.SelectedRows;
-            if (rows[0].Cells["ChasisID"].Value == null)
+            if (rows[0].Cells["ChassisID"].Value == null)
             {
                 MessageBox.Show("Select a car first");
                 return;
             }
 
-            int check = controllerObj.ReserveCar(Convert.ToString(rows[0].Cells["ChasisID"].Value), 2);
+            int check = controllerObj.ReserveCar(Convert.ToString(rows[0].Cells["ChassisID"].Value), 2);
             if (check == 0)
                 MessageBox.Show("Failed");
             else
@@ -111,7 +111,11 @@ namespace Car_Agency
             Currencylabel.Text = (string)row["Currency"];
 
             metroGrid1.DataSource = controllerObj.SelectAvailabeCars(Convert.ToString(CatCombobox.SelectedValue));
-        } 
+        }
 
+        private void AvailableCars_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

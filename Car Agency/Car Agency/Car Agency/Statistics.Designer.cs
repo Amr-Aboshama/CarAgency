@@ -45,6 +45,7 @@
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(108, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Maximum Salary";
             // 
@@ -55,6 +56,7 @@
             this.MaxSalaryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MaxSalaryLabel.Name = "MaxSalaryLabel";
             this.MaxSalaryLabel.Size = new System.Drawing.Size(108, 19);
+            this.MaxSalaryLabel.Style = MetroFramework.MetroColorStyle.Red;
             this.MaxSalaryLabel.TabIndex = 1;
             this.MaxSalaryLabel.Text = "Maximum Salary";
             // 
@@ -65,6 +67,7 @@
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(144, 19);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Number Of Employees";
             // 
@@ -75,6 +78,7 @@
             this.EmpNumLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EmpNumLabel.Name = "EmpNumLabel";
             this.EmpNumLabel.Size = new System.Drawing.Size(144, 19);
+            this.EmpNumLabel.Style = MetroFramework.MetroColorStyle.Red;
             this.EmpNumLabel.TabIndex = 3;
             this.EmpNumLabel.Text = "Number Of Employees";
             // 
@@ -85,6 +89,7 @@
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Sum Of Salary";
             // 
@@ -95,6 +100,7 @@
             this.salaryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.salaryLabel.Name = "salaryLabel";
             this.salaryLabel.Size = new System.Drawing.Size(43, 19);
+            this.salaryLabel.Style = MetroFramework.MetroColorStyle.Red;
             this.salaryLabel.TabIndex = 5;
             this.salaryLabel.Text = "salary";
             // 
@@ -105,6 +111,7 @@
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(164, 19);
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel4.TabIndex = 6;
             this.metroLabel4.Text = "Number Of Available Cars";
             // 
@@ -115,6 +122,7 @@
             this.carLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.carLabel.Name = "carLabel";
             this.carLabel.Size = new System.Drawing.Size(164, 19);
+            this.carLabel.Style = MetroFramework.MetroColorStyle.Red;
             this.carLabel.TabIndex = 7;
             this.carLabel.Text = "Number Of Available Cars";
             // 
@@ -131,10 +139,12 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.MaxSalaryLabel);
             this.Controls.Add(this.metroLabel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Statistics";
-            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Statistics";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Statistics_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,7 +16,7 @@ namespace Car_Agency
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new addUser());
+            Application.Run(new Login());
         }
     }
 }

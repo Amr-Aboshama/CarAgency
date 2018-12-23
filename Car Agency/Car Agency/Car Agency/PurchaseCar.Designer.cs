@@ -51,6 +51,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(23, 97);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(104, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Category Name";
             // 
@@ -60,6 +61,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(23, 175);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(103, 19);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Chassis Number";
             // 
@@ -70,6 +72,7 @@
             this.CategoryNameComboBox.Location = new System.Drawing.Point(171, 97);
             this.CategoryNameComboBox.Name = "CategoryNameComboBox";
             this.CategoryNameComboBox.Size = new System.Drawing.Size(168, 29);
+            this.CategoryNameComboBox.Style = MetroFramework.MetroColorStyle.Red;
             this.CategoryNameComboBox.TabIndex = 2;
             this.CategoryNameComboBox.UseSelectable = true;
             // 
@@ -98,6 +101,7 @@
             this.ChassisIDTextBox.SelectionStart = 0;
             this.ChassisIDTextBox.ShortcutsEnabled = true;
             this.ChassisIDTextBox.Size = new System.Drawing.Size(168, 23);
+            this.ChassisIDTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.ChassisIDTextBox.TabIndex = 3;
             this.ChassisIDTextBox.UseSelectable = true;
             this.ChassisIDTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -109,6 +113,7 @@
             this.metroLabel3.Location = new System.Drawing.Point(23, 249);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(99, 19);
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Motor Number";
             // 
@@ -137,6 +142,7 @@
             this.MotorNumberTextBox.SelectionStart = 0;
             this.MotorNumberTextBox.ShortcutsEnabled = true;
             this.MotorNumberTextBox.Size = new System.Drawing.Size(168, 23);
+            this.MotorNumberTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.MotorNumberTextBox.TabIndex = 5;
             this.MotorNumberTextBox.UseSelectable = true;
             this.MotorNumberTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -148,6 +154,7 @@
             this.metroLabel4.Location = new System.Drawing.Point(23, 326);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(42, 19);
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel4.TabIndex = 6;
             this.metroLabel4.Text = "Color";
             // 
@@ -176,6 +183,7 @@
             this.ColorTextBox.SelectionStart = 0;
             this.ColorTextBox.ShortcutsEnabled = true;
             this.ColorTextBox.Size = new System.Drawing.Size(168, 23);
+            this.ColorTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.ColorTextBox.TabIndex = 7;
             this.ColorTextBox.UseSelectable = true;
             this.ColorTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -187,6 +195,7 @@
             this.metroLabel5.Location = new System.Drawing.Point(422, 97);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel5.TabIndex = 8;
             this.metroLabel5.Text = "Supplier";
             // 
@@ -196,6 +205,7 @@
             this.metroLabel6.Location = new System.Drawing.Point(422, 175);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(38, 19);
+            this.metroLabel6.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel6.TabIndex = 9;
             this.metroLabel6.Text = "Price";
             // 
@@ -205,6 +215,7 @@
             this.metroLabel7.Location = new System.Drawing.Point(422, 249);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(61, 19);
+            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel7.TabIndex = 10;
             this.metroLabel7.Text = "Currency";
             // 
@@ -214,6 +225,7 @@
             this.metroButton1.Location = new System.Drawing.Point(694, 404);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(83, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroButton1.TabIndex = 12;
             this.metroButton1.Text = "Finish";
             this.metroButton1.UseSelectable = true;
@@ -226,6 +238,7 @@
             this.SupplierComboBox.Location = new System.Drawing.Point(529, 97);
             this.SupplierComboBox.Name = "SupplierComboBox";
             this.SupplierComboBox.Size = new System.Drawing.Size(168, 29);
+            this.SupplierComboBox.Style = MetroFramework.MetroColorStyle.Red;
             this.SupplierComboBox.TabIndex = 13;
             this.SupplierComboBox.UseSelectable = true;
             // 
@@ -236,6 +249,7 @@
             this.CurrencyComboBox.Location = new System.Drawing.Point(529, 249);
             this.CurrencyComboBox.Name = "CurrencyComboBox";
             this.CurrencyComboBox.Size = new System.Drawing.Size(168, 29);
+            this.CurrencyComboBox.Style = MetroFramework.MetroColorStyle.Red;
             this.CurrencyComboBox.TabIndex = 14;
             this.CurrencyComboBox.UseSelectable = true;
             // 
@@ -264,6 +278,7 @@
             this.PriceTextBox.SelectionStart = 0;
             this.PriceTextBox.ShortcutsEnabled = true;
             this.PriceTextBox.Size = new System.Drawing.Size(168, 23);
+            this.PriceTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.PriceTextBox.TabIndex = 15;
             this.PriceTextBox.UseSelectable = true;
             this.PriceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -290,7 +305,9 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "PurchaseCar";
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Purchase Car";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PurchaseCar_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

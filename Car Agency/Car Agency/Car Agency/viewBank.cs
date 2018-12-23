@@ -21,5 +21,10 @@ namespace Car_Agency
             BalanceGrid.DataSource = controllerObj.viewBankBalance();
             TransactionsGrid.DataSource = controllerObj.viewBankTransactions();
         }
+
+        private void viewBank_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

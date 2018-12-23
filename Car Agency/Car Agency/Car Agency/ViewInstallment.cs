@@ -33,7 +33,8 @@ namespace Car_Agency
 
             installmentID = Convert.ToInt32(InstallmentsGrid.SelectedRows[0].Cells["Installment ID"].Value);
 
-            new ViewCheques(installmentID).Show();
+            new ViewCheques(installmentID).Show(this);
+            Hide();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -50,6 +51,11 @@ namespace Car_Agency
             saleID = Convert.ToInt32(InstallmentsGrid.SelectedRows[0].Cells["Sale ID"].Value);
 
             //new SPDetails(true, saleID).Show();
+        }
+
+        private void ViewInstallment_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }

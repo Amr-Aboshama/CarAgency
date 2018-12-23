@@ -20,12 +20,19 @@ namespace Car_Agency
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            new ViewInstallment().Show();
-        }
+            new ViewInstallment().Show(this);
+			this.Hide();
+		}
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            new ViewCheques().Show();
-        }
-    }
+            new ViewCheques().Show(this);
+			this.Hide();
+		}
+
+		private void userCreditManager_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

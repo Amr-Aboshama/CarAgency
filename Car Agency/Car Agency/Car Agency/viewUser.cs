@@ -235,5 +235,10 @@ namespace Car_Agency
             privileges.Enabled = true;
             Apply.Enabled = true;
         }
+
+        private void viewUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

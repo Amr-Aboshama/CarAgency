@@ -30,6 +30,11 @@ namespace Car_Agency
             metroComboBox1.SelectedValue = 0;
         }
 
+        private void addTransactionToBank_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
             decimal price;

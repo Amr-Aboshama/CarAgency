@@ -220,6 +220,9 @@ namespace Car_Agency
             ViewCustMode(0);
         }
 
-        
+        private void Customers_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

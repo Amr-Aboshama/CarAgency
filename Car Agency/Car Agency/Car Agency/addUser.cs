@@ -148,5 +148,10 @@ namespace Car_Agency
             }
             MessageBox.Show("User added Successfully!");
         }
+
+        private void addUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

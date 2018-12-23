@@ -34,7 +34,8 @@ namespace Car_Agency
             if (installmentInserted == false)
                 if (!InsertInstallment())
                     return;
-            new AddCheque(installmentID).Show();
+            new AddCheque(installmentID).Show(this);
+            Hide();
         }
 
         private void metroButton2_Click(object sender, EventArgs e) //finish
@@ -92,6 +93,11 @@ namespace Car_Agency
             }
             installmentInserted = true;
             return true;
+        }
+
+        private void AddInstallment_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }

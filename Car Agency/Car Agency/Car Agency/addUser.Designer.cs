@@ -240,6 +240,7 @@
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Add New User";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.addUser_FormClosed);
             this.Load += new System.EventHandler(this.addUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

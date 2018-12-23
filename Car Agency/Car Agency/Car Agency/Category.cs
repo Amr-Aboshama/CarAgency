@@ -136,5 +136,10 @@ namespace Car_Agency
         {
             SetMode(0);
         }
+
+        private void Category_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

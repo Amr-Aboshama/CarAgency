@@ -52,14 +52,16 @@ namespace Car_Agency
         {
           
             Category categoryFrom = new Category(Convert.ToString(CatlistBox.SelectedValue));
-            categoryFrom.Show();
+            categoryFrom.Show(this);
+            Hide();
         }
 
         //insert new category
         private void metroButton1_Click(object sender, EventArgs e)
         {
             Category categoryFrom = new Category("");
-            categoryFrom.Show();
+            categoryFrom.Show(this);
+            Hide();
         }
 
         //update data after inserting new category (refrsh button)
@@ -74,6 +76,11 @@ namespace Car_Agency
             CatlistBox.DisplayMember = "CatName";
             CatlistBox.ValueMember = "CatName";
             CatlistBox.DataSource = controllerObj.SelectCategories(Convert.ToString(BrandComboBox.SelectedValue), Convert.ToString(TypeComboBox.SelectedValue));
+        }
+
+        private void ViewCategory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }

@@ -19,5 +19,10 @@ namespace Car_Agency
             InitializeComponent();
             ChequesGrid.DataSource = controllerObj.SelectCheques(installmentID);
         }
+
+        private void ViewCheques_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

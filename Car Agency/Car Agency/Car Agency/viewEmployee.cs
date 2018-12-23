@@ -206,5 +206,10 @@ namespace Car_Agency
                 MessageBox.Show(E.Message);
             }
         }
+
+        private void viewEmployee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

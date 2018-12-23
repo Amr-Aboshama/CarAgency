@@ -102,5 +102,10 @@ namespace Car_Agency
                 controllerObj.DeleteCar(ChassisID);
             }
         }
+
+        private void PurchaseCar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

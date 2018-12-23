@@ -347,6 +347,7 @@
             this.Name = "viewEmployee";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "View/Edit Employee";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.viewEmployee_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

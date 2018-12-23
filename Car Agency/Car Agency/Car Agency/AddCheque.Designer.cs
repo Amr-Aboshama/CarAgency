@@ -61,10 +61,9 @@
             this.metroLabel1.Location = new System.Drawing.Point(43, 76);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(70, 19);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Cheque ID";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel4
             // 
@@ -72,10 +71,9 @@
             this.metroLabel4.Location = new System.Drawing.Point(15, 15);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel4.TabIndex = 4;
             this.metroLabel4.Text = "Customer";
-            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CustomerComboBox
             // 
@@ -85,9 +83,8 @@
             this.CustomerComboBox.Location = new System.Drawing.Point(114, 15);
             this.CustomerComboBox.Name = "CustomerComboBox";
             this.CustomerComboBox.Size = new System.Drawing.Size(180, 29);
-            this.CustomerComboBox.Style = MetroFramework.MetroColorStyle.Silver;
+            this.CustomerComboBox.Style = MetroFramework.MetroColorStyle.Red;
             this.CustomerComboBox.TabIndex = 4;
-            this.CustomerComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.CustomerComboBox.UseSelectable = true;
             // 
             // metroLabel5
@@ -96,10 +93,9 @@
             this.metroLabel5.Location = new System.Drawing.Point(15, 75);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(98, 19);
-            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel5.TabIndex = 5;
             this.metroLabel5.Text = "Customer Bank";
-            this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel6
             // 
@@ -107,10 +103,9 @@
             this.metroLabel6.Location = new System.Drawing.Point(43, 125);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(63, 19);
-            this.metroLabel6.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel6.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel6.TabIndex = 6;
             this.metroLabel6.Text = "Due Date";
-            this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel7
             // 
@@ -118,10 +113,9 @@
             this.metroLabel7.Location = new System.Drawing.Point(383, 125);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(43, 19);
-            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel7.TabIndex = 7;
             this.metroLabel7.Text = "Notes";
-            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel8
             // 
@@ -129,10 +123,9 @@
             this.metroLabel8.Location = new System.Drawing.Point(383, 76);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(86, 19);
-            this.metroLabel8.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel8.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel8.TabIndex = 8;
             this.metroLabel8.Text = "Delay Penalty";
-            this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel2
             // 
@@ -140,10 +133,9 @@
             this.metroLabel2.Location = new System.Drawing.Point(20, 19);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(38, 19);
-            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Price";
-            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel3
             // 
@@ -151,10 +143,9 @@
             this.metroLabel3.Location = new System.Drawing.Point(20, 60);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel3.TabIndex = 2;
             this.metroLabel3.Text = "Currency";
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CurrencyComboBox
             // 
@@ -164,9 +155,8 @@
             this.CurrencyComboBox.Location = new System.Drawing.Point(114, 60);
             this.CurrencyComboBox.Name = "CurrencyComboBox";
             this.CurrencyComboBox.Size = new System.Drawing.Size(185, 29);
-            this.CurrencyComboBox.Style = MetroFramework.MetroColorStyle.Silver;
+            this.CurrencyComboBox.Style = MetroFramework.MetroColorStyle.Red;
             this.CurrencyComboBox.TabIndex = 3;
-            this.CurrencyComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.CurrencyComboBox.UseSelectable = true;
             // 
             // groupBox1
@@ -206,9 +196,8 @@
             this.PriceTextBox.SelectionStart = 0;
             this.PriceTextBox.ShortcutsEnabled = true;
             this.PriceTextBox.Size = new System.Drawing.Size(185, 23);
-            this.PriceTextBox.Style = MetroFramework.MetroColorStyle.Silver;
+            this.PriceTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.PriceTextBox.TabIndex = 4;
-            this.PriceTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.PriceTextBox.UseSelectable = true;
             this.PriceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PriceTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -239,9 +228,8 @@
             this.NotesTextBox.SelectionStart = 0;
             this.NotesTextBox.ShortcutsEnabled = true;
             this.NotesTextBox.Size = new System.Drawing.Size(300, 243);
-            this.NotesTextBox.Style = MetroFramework.MetroColorStyle.Silver;
+            this.NotesTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.NotesTextBox.TabIndex = 5;
-            this.NotesTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.NotesTextBox.UseSelectable = true;
             this.NotesTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NotesTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -271,9 +259,8 @@
             this.ChequeIDTextBox.SelectionStart = 0;
             this.ChequeIDTextBox.ShortcutsEnabled = true;
             this.ChequeIDTextBox.Size = new System.Drawing.Size(185, 23);
-            this.ChequeIDTextBox.Style = MetroFramework.MetroColorStyle.Silver;
+            this.ChequeIDTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.ChequeIDTextBox.TabIndex = 5;
-            this.ChequeIDTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ChequeIDTextBox.UseSelectable = true;
             this.ChequeIDTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ChequeIDTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -303,9 +290,8 @@
             this.CustomerBankTextBox.SelectionStart = 0;
             this.CustomerBankTextBox.ShortcutsEnabled = true;
             this.CustomerBankTextBox.Size = new System.Drawing.Size(175, 23);
-            this.CustomerBankTextBox.Style = MetroFramework.MetroColorStyle.Silver;
+            this.CustomerBankTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.CustomerBankTextBox.TabIndex = 9;
-            this.CustomerBankTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.CustomerBankTextBox.UseSelectable = true;
             this.CustomerBankTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CustomerBankTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -335,9 +321,8 @@
             this.DelayPenaltyTextBox.SelectionStart = 0;
             this.DelayPenaltyTextBox.ShortcutsEnabled = true;
             this.DelayPenaltyTextBox.Size = new System.Drawing.Size(146, 23);
-            this.DelayPenaltyTextBox.Style = MetroFramework.MetroColorStyle.Silver;
+            this.DelayPenaltyTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.DelayPenaltyTextBox.TabIndex = 11;
-            this.DelayPenaltyTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.DelayPenaltyTextBox.UseSelectable = true;
             this.DelayPenaltyTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DelayPenaltyTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -348,10 +333,9 @@
             this.metroButton1.Location = new System.Drawing.Point(647, 394);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(83, 23);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroButton1.TabIndex = 12;
             this.metroButton1.Text = "Finish";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
@@ -361,9 +345,8 @@
             this.DueDateDateTime.MinimumSize = new System.Drawing.Size(0, 29);
             this.DueDateDateTime.Name = "DueDateDateTime";
             this.DueDateDateTime.Size = new System.Drawing.Size(200, 29);
-            this.DueDateDateTime.Style = MetroFramework.MetroColorStyle.Silver;
+            this.DueDateDateTime.Style = MetroFramework.MetroColorStyle.Red;
             this.DueDateDateTime.TabIndex = 13;
-            this.DueDateDateTime.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // groupBox2
             // 
@@ -383,10 +366,9 @@
             this.ForMeRadioButton.Location = new System.Drawing.Point(20, 8);
             this.ForMeRadioButton.Name = "ForMeRadioButton";
             this.ForMeRadioButton.Size = new System.Drawing.Size(60, 15);
-            this.ForMeRadioButton.Style = MetroFramework.MetroColorStyle.Silver;
+            this.ForMeRadioButton.Style = MetroFramework.MetroColorStyle.Red;
             this.ForMeRadioButton.TabIndex = 15;
             this.ForMeRadioButton.Text = "For me";
-            this.ForMeRadioButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ForMeRadioButton.UseSelectable = true;
             // 
             // OnMeRadioButton
@@ -395,10 +377,9 @@
             this.OnMeRadioButton.Location = new System.Drawing.Point(192, 8);
             this.OnMeRadioButton.Name = "OnMeRadioButton";
             this.OnMeRadioButton.Size = new System.Drawing.Size(59, 15);
-            this.OnMeRadioButton.Style = MetroFramework.MetroColorStyle.Silver;
+            this.OnMeRadioButton.Style = MetroFramework.MetroColorStyle.Red;
             this.OnMeRadioButton.TabIndex = 16;
             this.OnMeRadioButton.Text = "On me";
-            this.OnMeRadioButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.OnMeRadioButton.UseSelectable = true;
             // 
             // ForOnMeGroupBox
@@ -429,9 +410,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroLabel1);
             this.Name = "AddCheque";
-            this.Style = MetroFramework.MetroColorStyle.Silver;
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Add Cheque";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddCheque_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

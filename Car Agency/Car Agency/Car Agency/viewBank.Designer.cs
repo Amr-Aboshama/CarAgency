@@ -191,6 +191,7 @@
             this.Name = "viewBank";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "View Bank";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.viewBank_FormClosed);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BalanceGrid)).EndInit();

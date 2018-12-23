@@ -25,6 +25,9 @@ namespace Car_Agency
             carLabel.Text = controllerObj.NumOfAvailableCars().ToString();
         }
 
-       
+        private void Statistics_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

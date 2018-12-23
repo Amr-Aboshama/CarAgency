@@ -91,6 +91,7 @@
             this.Name = "ViewCheques";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "View Cheques";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewCheques_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.ChequesGrid)).EndInit();
             this.ResumeLayout(false);
 

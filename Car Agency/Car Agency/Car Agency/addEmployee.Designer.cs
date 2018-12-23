@@ -256,6 +256,7 @@
             this.Name = "addEmployee";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Add Employee";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.addEmployee_FormClosed);
             this.Load += new System.EventHandler(this.addEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

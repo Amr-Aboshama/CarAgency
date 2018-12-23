@@ -28,50 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.SuspendLayout();
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.AutoSize = true;
-            this.metroButton1.Location = new System.Drawing.Point(108, 140);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(100, 23);
-            this.metroButton1.TabIndex = 0;
-            this.metroButton1.Text = "View Installments";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.AutoSize = true;
-            this.metroButton2.Location = new System.Drawing.Point(108, 228);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(100, 23);
-            this.metroButton2.TabIndex = 1;
-            this.metroButton2.Text = "View Cheques";
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
-            // 
-            // CreditManager
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 369);
-            this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
-            this.Name = "CreditManager";
-            this.Style = MetroFramework.MetroColorStyle.Red;
-            this.Text = "Credit Manager";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.metroTile2 = new MetroFramework.Controls.MetroTile();
+			this.metroTile1 = new MetroFramework.Controls.MetroTile();
+			this.SuspendLayout();
+			// 
+			// metroTile2
+			// 
+			this.metroTile2.ActiveControl = null;
+			this.metroTile2.Location = new System.Drawing.Point(30, 139);
+			this.metroTile2.Name = "metroTile2";
+			this.metroTile2.Size = new System.Drawing.Size(568, 56);
+			this.metroTile2.Style = MetroFramework.MetroColorStyle.Red;
+			this.metroTile2.TabIndex = 3;
+			this.metroTile2.Text = "Purchase Cheques";
+			this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.metroTile2.UseSelectable = true;
+			// 
+			// metroTile1
+			// 
+			this.metroTile1.ActiveControl = null;
+			this.metroTile1.Location = new System.Drawing.Point(30, 77);
+			this.metroTile1.Name = "metroTile1";
+			this.metroTile1.Size = new System.Drawing.Size(568, 56);
+			this.metroTile1.Style = MetroFramework.MetroColorStyle.Red;
+			this.metroTile1.TabIndex = 2;
+			this.metroTile1.Text = "View Installments";
+			this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.metroTile1.UseSelectable = true;
+			// 
+			// userCreditManager
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(628, 218);
+			this.Controls.Add(this.metroTile2);
+			this.Controls.Add(this.metroTile1);
+			this.Margin = new System.Windows.Forms.Padding(4);
+			this.Name = "userCreditManager";
+			this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
+			this.Style = MetroFramework.MetroColorStyle.Red;
+			this.Text = "Credit Manager";
+			this.Load += new System.EventHandler(this.userCreditManager_Load);
+			this.ResumeLayout(false);
 
         }
 
-        #endregion
+		#endregion
 
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
-    }
+		private MetroFramework.Controls.MetroTile metroTile2;
+		private MetroFramework.Controls.MetroTile metroTile1;
+	}
 }

@@ -35,11 +35,11 @@
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.PriceOfOneInstallmentTextBox = new MetroFramework.Controls.MetroTextBox();
             this.CurrencyComboBox = new MetroFramework.Controls.MetroComboBox();
             this.SubmittedPriceTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.PriceOfOneInstallmentTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.FactorTextBox = new MetroFramework.Controls.MetroTextBox();
             this.ArchivePlaceTextBox = new MetroFramework.Controls.MetroTextBox();
             this.DrawerNumberTextBox = new MetroFramework.Controls.MetroTextBox();
@@ -51,6 +51,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(6, 19);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(103, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Submitted Price";
             // 
@@ -59,6 +60,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(6, 68);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(150, 19);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Price of one installment";
             // 
@@ -67,6 +69,7 @@
             this.metroLabel4.Location = new System.Drawing.Point(434, 37);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel4.TabIndex = 3;
             this.metroLabel4.Text = "Currency";
             // 
@@ -75,6 +78,7 @@
             this.metroLabel5.Location = new System.Drawing.Point(56, 210);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(49, 19);
+            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel5.TabIndex = 4;
             this.metroLabel5.Text = "Factor";
             // 
@@ -84,6 +88,7 @@
             this.metroLabel6.Location = new System.Drawing.Point(56, 256);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel6.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel6.TabIndex = 5;
             this.metroLabel6.Text = "Archive Place";
             // 
@@ -93,6 +98,7 @@
             this.metroLabel7.Location = new System.Drawing.Point(56, 305);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(104, 19);
+            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel7.TabIndex = 6;
             this.metroLabel7.Text = "Drawer Number";
             // 
@@ -111,27 +117,36 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
-            // metroButton1
+            // PriceOfOneInstallmentTextBox
             // 
-            this.metroButton1.AutoSize = true;
-            this.metroButton1.Location = new System.Drawing.Point(534, 394);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(83, 23);
-            this.metroButton1.TabIndex = 14;
-            this.metroButton1.Text = "Add Cheque";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
-            // metroButton2
             // 
-            this.metroButton2.AutoSize = true;
-            this.metroButton2.Location = new System.Drawing.Point(671, 394);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(83, 23);
-            this.metroButton2.TabIndex = 15;
-            this.metroButton2.Text = "Finish";
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            this.PriceOfOneInstallmentTextBox.CustomButton.Image = null;
+            this.PriceOfOneInstallmentTextBox.CustomButton.Location = new System.Drawing.Point(132, 1);
+            this.PriceOfOneInstallmentTextBox.CustomButton.Name = "";
+            this.PriceOfOneInstallmentTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PriceOfOneInstallmentTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PriceOfOneInstallmentTextBox.CustomButton.TabIndex = 1;
+            this.PriceOfOneInstallmentTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.PriceOfOneInstallmentTextBox.CustomButton.UseSelectable = true;
+            this.PriceOfOneInstallmentTextBox.CustomButton.Visible = false;
+            this.PriceOfOneInstallmentTextBox.Lines = new string[0];
+            this.PriceOfOneInstallmentTextBox.Location = new System.Drawing.Point(208, 68);
+            this.PriceOfOneInstallmentTextBox.MaxLength = 32767;
+            this.PriceOfOneInstallmentTextBox.Name = "PriceOfOneInstallmentTextBox";
+            this.PriceOfOneInstallmentTextBox.PasswordChar = '\0';
+            this.PriceOfOneInstallmentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.PriceOfOneInstallmentTextBox.SelectedText = "";
+            this.PriceOfOneInstallmentTextBox.SelectionLength = 0;
+            this.PriceOfOneInstallmentTextBox.SelectionStart = 0;
+            this.PriceOfOneInstallmentTextBox.ShortcutsEnabled = true;
+            this.PriceOfOneInstallmentTextBox.Size = new System.Drawing.Size(154, 23);
+            this.PriceOfOneInstallmentTextBox.Style = MetroFramework.MetroColorStyle.Red;
+            this.PriceOfOneInstallmentTextBox.TabIndex = 17;
+            this.PriceOfOneInstallmentTextBox.UseSelectable = true;
+            this.PriceOfOneInstallmentTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.PriceOfOneInstallmentTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // CurrencyComboBox
             // 
@@ -140,6 +155,7 @@
             this.CurrencyComboBox.Location = new System.Drawing.Point(526, 37);
             this.CurrencyComboBox.Name = "CurrencyComboBox";
             this.CurrencyComboBox.Size = new System.Drawing.Size(121, 29);
+            this.CurrencyComboBox.Style = MetroFramework.MetroColorStyle.Red;
             this.CurrencyComboBox.TabIndex = 10;
             this.CurrencyComboBox.UseSelectable = true;
             // 
@@ -168,40 +184,35 @@
             this.SubmittedPriceTextBox.SelectionStart = 0;
             this.SubmittedPriceTextBox.ShortcutsEnabled = true;
             this.SubmittedPriceTextBox.Size = new System.Drawing.Size(154, 23);
+            this.SubmittedPriceTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.SubmittedPriceTextBox.TabIndex = 16;
             this.SubmittedPriceTextBox.UseSelectable = true;
             this.SubmittedPriceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.SubmittedPriceTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // PriceOfOneInstallmentTextBox
+            // metroButton1
             // 
+            this.metroButton1.AutoSize = true;
+            this.metroButton1.Location = new System.Drawing.Point(534, 394);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(83, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroButton1.TabIndex = 14;
+            this.metroButton1.Text = "Add Cheque";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // metroButton2
             // 
-            // 
-            this.PriceOfOneInstallmentTextBox.CustomButton.Image = null;
-            this.PriceOfOneInstallmentTextBox.CustomButton.Location = new System.Drawing.Point(132, 1);
-            this.PriceOfOneInstallmentTextBox.CustomButton.Name = "";
-            this.PriceOfOneInstallmentTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.PriceOfOneInstallmentTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.PriceOfOneInstallmentTextBox.CustomButton.TabIndex = 1;
-            this.PriceOfOneInstallmentTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.PriceOfOneInstallmentTextBox.CustomButton.UseSelectable = true;
-            this.PriceOfOneInstallmentTextBox.CustomButton.Visible = false;
-            this.PriceOfOneInstallmentTextBox.Lines = new string[0];
-            this.PriceOfOneInstallmentTextBox.Location = new System.Drawing.Point(208, 68);
-            this.PriceOfOneInstallmentTextBox.MaxLength = 32767;
-            this.PriceOfOneInstallmentTextBox.Name = "PriceOfOneInstallmentTextBox";
-            this.PriceOfOneInstallmentTextBox.PasswordChar = '\0';
-            this.PriceOfOneInstallmentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.PriceOfOneInstallmentTextBox.SelectedText = "";
-            this.PriceOfOneInstallmentTextBox.SelectionLength = 0;
-            this.PriceOfOneInstallmentTextBox.SelectionStart = 0;
-            this.PriceOfOneInstallmentTextBox.ShortcutsEnabled = true;
-            this.PriceOfOneInstallmentTextBox.Size = new System.Drawing.Size(154, 23);
-            this.PriceOfOneInstallmentTextBox.TabIndex = 17;
-            this.PriceOfOneInstallmentTextBox.UseSelectable = true;
-            this.PriceOfOneInstallmentTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.PriceOfOneInstallmentTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroButton2.AutoSize = true;
+            this.metroButton2.Location = new System.Drawing.Point(671, 394);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(83, 23);
+            this.metroButton2.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroButton2.TabIndex = 15;
+            this.metroButton2.Text = "Finish";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // FactorTextBox
             // 
@@ -228,6 +239,7 @@
             this.FactorTextBox.SelectionStart = 0;
             this.FactorTextBox.ShortcutsEnabled = true;
             this.FactorTextBox.Size = new System.Drawing.Size(154, 23);
+            this.FactorTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.FactorTextBox.TabIndex = 19;
             this.FactorTextBox.UseSelectable = true;
             this.FactorTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -258,6 +270,7 @@
             this.ArchivePlaceTextBox.SelectionStart = 0;
             this.ArchivePlaceTextBox.ShortcutsEnabled = true;
             this.ArchivePlaceTextBox.Size = new System.Drawing.Size(154, 23);
+            this.ArchivePlaceTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.ArchivePlaceTextBox.TabIndex = 20;
             this.ArchivePlaceTextBox.UseSelectable = true;
             this.ArchivePlaceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -288,6 +301,7 @@
             this.DrawerNumberTextBox.SelectionStart = 0;
             this.DrawerNumberTextBox.ShortcutsEnabled = true;
             this.DrawerNumberTextBox.Size = new System.Drawing.Size(154, 23);
+            this.DrawerNumberTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.DrawerNumberTextBox.TabIndex = 21;
             this.DrawerNumberTextBox.UseSelectable = true;
             this.DrawerNumberTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -308,7 +322,10 @@
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
             this.Name = "AddInstallment";
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Add Installment";
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddInstallment_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

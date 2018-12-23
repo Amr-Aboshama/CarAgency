@@ -309,6 +309,7 @@
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "View/Edit User";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.viewUser_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

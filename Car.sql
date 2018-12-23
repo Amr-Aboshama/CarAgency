@@ -108,7 +108,7 @@ MotorNum varchar(20) unique not null,
 Color nvarchar(20) not null,
 CatName nvarchar(20) not null,
 StoreID int,
-Status int default 0,	/*isn't sold initially*/
+Status int default 1,	/*isn't sold initially*/
 foreign key (StoreID) references Store(StoreID) on delete set null on update cascade,
 foreign key (CatName) references Category(CatName) on update cascade
 );
@@ -235,6 +235,16 @@ Username varchar(20) not null,
 JobName nvarchar(50) not null,
 foreign key (Username) references UserBasic(Username) on delete cascade on update cascade,
 foreign key (JobName) references Jobs(Name) on delete no action on update no action
+);
+
+create table CallRecords
+(
+custID decimal(14,0) not null,
+empID decimal(14,0),
+notes nvarchar(2000),
+callID int identity(1,1) primary key,
+foreign key (custID) references customer(custNatID) on delete cascade on update cascade,
+foreign key (empID) references employee(empNAtID) on delete set null on update cascade,
 );
 
 INSERT INTO Jobs values('--All--');

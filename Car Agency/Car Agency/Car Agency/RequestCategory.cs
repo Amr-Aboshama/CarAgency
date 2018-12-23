@@ -38,7 +38,8 @@ namespace Car_Agency
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Category v = new Category(Convert.ToString(listBox1.SelectedValue));
-            v.Show();
+            v.Show(this);
+            Hide();
         }
 
         //insert new requested category 
@@ -46,7 +47,8 @@ namespace Car_Agency
         {
             // 1 for salesman
             Category v = new Category("");
-            v.Show();
+            v.Show(this);
+            Hide();
         }
 
         //enable or disable customerComboBox 
@@ -101,6 +103,11 @@ namespace Car_Agency
             BrandmetroComboBox.DisplayMember = "Brand";
             BrandmetroComboBox.DataSource = controllerObj.SelectBrands();
             BrandmetroComboBox.SelectedValue = -1;
+        }
+
+        private void RequestCategory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }

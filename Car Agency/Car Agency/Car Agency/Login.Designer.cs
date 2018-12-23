@@ -41,10 +41,9 @@
             this.metroLabel1.Location = new System.Drawing.Point(20, 100);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(71, 19);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Username:";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel2
             // 
@@ -52,10 +51,9 @@
             this.metroLabel2.Location = new System.Drawing.Point(20, 150);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Password:";
-            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // username
             // 
@@ -82,9 +80,8 @@
             this.username.SelectionStart = 0;
             this.username.ShortcutsEnabled = true;
             this.username.Size = new System.Drawing.Size(160, 23);
-            this.username.Style = MetroFramework.MetroColorStyle.Silver;
+            this.username.Style = MetroFramework.MetroColorStyle.Red;
             this.username.TabIndex = 2;
-            this.username.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.username.UseSelectable = true;
             this.username.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.username.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -114,9 +111,8 @@
             this.password.SelectionStart = 0;
             this.password.ShortcutsEnabled = true;
             this.password.Size = new System.Drawing.Size(160, 23);
-            this.password.Style = MetroFramework.MetroColorStyle.Silver;
+            this.password.Style = MetroFramework.MetroColorStyle.Red;
             this.password.TabIndex = 3;
-            this.password.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.password.UseSelectable = true;
             this.password.UseSystemPasswordChar = true;
             this.password.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -127,10 +123,9 @@
             this.LoginButton.Location = new System.Drawing.Point(97, 191);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(117, 23);
-            this.LoginButton.Style = MetroFramework.MetroColorStyle.Silver;
+            this.LoginButton.Style = MetroFramework.MetroColorStyle.Red;
             this.LoginButton.TabIndex = 4;
             this.LoginButton.Text = "Login";
-            this.LoginButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.LoginButton.UseSelectable = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
@@ -145,9 +140,9 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "Login";
-            this.Style = MetroFramework.MetroColorStyle.Silver;
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Login";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.ResumeLayout(false);
             this.PerformLayout();
 

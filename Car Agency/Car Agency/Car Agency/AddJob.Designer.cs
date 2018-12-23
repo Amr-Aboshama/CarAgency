@@ -58,6 +58,7 @@
             this.JobNameTextBox.SelectionStart = 0;
             this.JobNameTextBox.ShortcutsEnabled = true;
             this.JobNameTextBox.Size = new System.Drawing.Size(171, 23);
+            this.JobNameTextBox.Style = MetroFramework.MetroColorStyle.Red;
             this.JobNameTextBox.TabIndex = 0;
             this.JobNameTextBox.UseSelectable = true;
             this.JobNameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -69,15 +70,17 @@
             this.metroLabel1.Location = new System.Drawing.Point(48, 100);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Job Name";
             // 
             // metroButton1
             // 
             this.metroButton1.AutoSize = true;
-            this.metroButton1.Location = new System.Drawing.Point(694, 404);
+            this.metroButton1.Location = new System.Drawing.Point(137, 168);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(83, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "Add";
             this.metroButton1.UseSelectable = true;
@@ -87,12 +90,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(368, 226);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.JobNameTextBox);
             this.Name = "AddJob";
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Add Job";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddJob_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

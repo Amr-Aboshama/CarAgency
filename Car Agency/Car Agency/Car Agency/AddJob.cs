@@ -40,5 +40,10 @@ namespace Car_Agency
             else
                 MessageBox.Show("An Error occured while inserting the job");
         }
+
+        private void AddJob_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

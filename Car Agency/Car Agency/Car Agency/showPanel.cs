@@ -50,13 +50,32 @@ namespace Car_Agency
                 MessageBox.Show("Please Select a Privilege");
                 return;
             }
-            /*
-             * // To Open the proper window for a privilege
-            switch(privileges.SelectedValue.ToString())
+            Hide();
+            if (privileges.SelectedValue.ToString() == "Bank Manager")
             {
-                
+                userBankManager BM = new userBankManager();
+                BM.Show(this);
             }
-            */
+            else if (privileges.SelectedValue.ToString() == "Credit Manager")
+            {
+                userCreditManager CM = new userCreditManager();
+                CM.Show(this);
+            }
+            else if (privileges.SelectedValue.ToString() == "Inventory Manager")
+            {
+                userInventoryManager IM = new userInventoryManager();
+                IM.Show(this);
+            }
+            else if (privileges.SelectedValue.ToString() == "Sales Manager")
+            {
+                userSalesMan SM = new userSalesMan();
+                SM.Show(this);
+            }
+            else if (privileges.SelectedValue.ToString() == "Treasury Manager")
+            {
+                userTreasuryManager TM = new userTreasuryManager();
+                TM.Show(this);
+            }
         }
 
         private void showPrivileges_FormClosed(object sender, FormClosedEventArgs e)
@@ -66,6 +85,13 @@ namespace Car_Agency
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void adminPanelButton_Click(object sender, EventArgs e)
+        {
+            AdminPanel AP = new AdminPanel();
+            Hide();
+            AP.Show(this);
         }
     }
 }

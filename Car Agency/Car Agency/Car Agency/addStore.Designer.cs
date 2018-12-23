@@ -210,6 +210,7 @@
             this.Name = "addStore";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Add New Store";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.addStore_FormClosed);
             this.Load += new System.EventHandler(this.addStore_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

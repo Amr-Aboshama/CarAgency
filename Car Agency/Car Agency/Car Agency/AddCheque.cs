@@ -106,5 +106,10 @@ namespace Car_Agency
                 this.Close();
             }
         }
+
+        private void AddCheque_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

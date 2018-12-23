@@ -105,5 +105,10 @@ namespace Car_Agency
             jobs.SelectedValue = "";
             jobs.Refresh();
         }
+
+        private void addEmployee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

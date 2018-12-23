@@ -21,5 +21,10 @@ namespace Car_Agency
             BalanceGrid.DataSource = controllerObj.viewSafeBalance();
             TransactionsGrid.DataSource = controllerObj.viewSafeTransactions();
         }
+
+        private void viewSafe_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

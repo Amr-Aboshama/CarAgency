@@ -11,10 +11,10 @@ using MetroFramework.Forms;
 
 namespace Car_Agency
 {
-    public partial class InventoryManager : MetroForm
+    public partial class userInventoryManager : MetroForm
     {
         Controller controllerObj;
-        public InventoryManager()
+        public userInventoryManager()
         {
             InitializeComponent();
             controllerObj = new Controller();
@@ -37,13 +37,13 @@ namespace Car_Agency
         private void metroButton1_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection rows = metroGrid2.SelectedRows;
-            if (rows[0].Cells["ChasisID"].Value == null)
+            if (rows[0].Cells["ChassisID"].Value == null)
             {
                 MessageBox.Show("Select a car first");
                 return;
             }
 
-            string carID = (string)rows[0].Cells["ChasisID"].Value;
+            string carID = (string)rows[0].Cells["ChassisID"].Value;
             int check = controllerObj.InsertCarIntoStore(carID, Convert.ToString(metroComboBox1.SelectedValue));
             if (check == 0)
                 MessageBox.Show("Failed");
@@ -55,5 +55,15 @@ namespace Car_Agency
                 metroGrid2.DataSource = controllerObj.SelectCarsNotInStore();
             }
         }
-    }
+
+		private void userInventoryManager_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void userInventoryManager_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Owner.Show();
+		}
+	}
 }
