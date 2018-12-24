@@ -21,6 +21,10 @@ namespace Car_Agency
             InitializeComponent();
             controllerObj = new Controller();
 
+            bool salesPerson = controllerObj.checkPrivelege(Login.LoginUsername, "Sales Manager");
+            if (!salesPerson)
+                metroButton1.Visible = false;
+
             ModelTextbox.Enabled = false;
             SpecsTextbox.Enabled = false;
             PriceTextbox.Enabled = false;

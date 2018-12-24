@@ -18,13 +18,6 @@ namespace Car_Agency
         {
             dbMan = new DBManager(); // Create the DBManager Object
         }
-        // Check SQL Injection
-        public bool checkClean(string s)
-        {
-            for (int i = 0; i < s.Length; ++i)
-                if (s[i] == '\'' || s[i] == '"') return false;
-            return true;
-        }
 
         public string ComputeHashSHA256(string data)
         {
@@ -383,13 +376,8 @@ namespace Car_Agency
 
         public int GetNewRequestID()
         {
-            string query = "select max(ReqID) from CarRequest;";
-            int? id = dbMan.ExecuteScalar(query) as int?;
-
-            if (id == null)
-                return 1;
-            else
-                return (int)id + 1;
+            string query = "SELECT IDENT_CURRENT('CarRequest');";
+            return (int)dbMan.ExecuteScalar(query)+1;
         }
 
         public int UpdateCategory(string name,string newName, string brand, string type, string model, string specs, Decimal price, string currency)
@@ -464,31 +452,15 @@ namespace Car_Agency
             string query = "select count(ChassisID) from Car where Status = 1 ";
             return (int)dbMan.ExecuteScalar(query);
         }
-
-
-
-
-
-
-
-
-//>>>>>>> Nehal
+        
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
         }
-
-        public int getPriv(string username)
-        {
-            if (!checkClean(username)) return 0;
-
-            string query = "SELECT Priv FROM UserBasic WHERE Username = '" + username + "';";
-            return (int)dbMan.ExecuteScalar(query);
-        }
+        
 
         public decimal getEmpIDByUser(string username)
         {
-            if (!checkClean(username)) return 0;
 
             string query = "SELECT EmpID FROM UserBasic WHERE Username = '" + username + "';";
             return (decimal)dbMan.ExecuteScalar(query);
@@ -970,6 +942,15 @@ namespace Car_Agency
                 "join Employee on EmpNatID = EmpID " +
                 "join UserPrivileges on UserPrivileges.Username = UserBasic.Username order by Name;";
             return dbMan.ExecuteReader(query);
+        }
+
+        public bool checkPrivelege(string username, string priv)
+        {
+            string query = "select * from UserPrivileges where Username = '" + username + "' and JobName = '" + priv + "';";
+            DataTable dt = dbMan.ExecuteReader(query);
+            if (dt == null)
+                return false;
+            return true;
         }
     }
 }

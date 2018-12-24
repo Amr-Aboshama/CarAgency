@@ -42,13 +42,14 @@
             this.metroTile12 = new MetroFramework.Controls.MetroTile();
             this.metroTile13 = new MetroFramework.Controls.MetroTile();
             this.metroTile14 = new MetroFramework.Controls.MetroTile();
+            this.metroTile15 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // metroTile4
             // 
             this.metroTile4.ActiveControl = null;
             this.metroTile4.Location = new System.Drawing.Point(17, 102);
-            this.metroTile4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile4.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.Size = new System.Drawing.Size(424, 46);
             this.metroTile4.Style = MetroFramework.MetroColorStyle.Red;
@@ -62,7 +63,7 @@
             // 
             this.metroTile2.ActiveControl = null;
             this.metroTile2.Location = new System.Drawing.Point(17, 153);
-            this.metroTile2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile2.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(424, 46);
             this.metroTile2.Style = MetroFramework.MetroColorStyle.Red;
@@ -76,7 +77,7 @@
             // 
             this.metroTile1.ActiveControl = null;
             this.metroTile1.Location = new System.Drawing.Point(17, 51);
-            this.metroTile1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(424, 46);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.Red;
@@ -90,7 +91,7 @@
             // 
             this.metroTile3.ActiveControl = null;
             this.metroTile3.Location = new System.Drawing.Point(17, 254);
-            this.metroTile3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile3.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(424, 46);
             this.metroTile3.Style = MetroFramework.MetroColorStyle.Red;
@@ -104,7 +105,7 @@
             // 
             this.metroTile6.ActiveControl = null;
             this.metroTile6.Location = new System.Drawing.Point(17, 203);
-            this.metroTile6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile6.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile6.Name = "metroTile6";
             this.metroTile6.Size = new System.Drawing.Size(424, 46);
             this.metroTile6.Style = MetroFramework.MetroColorStyle.Red;
@@ -240,11 +241,26 @@
             this.metroTile14.UseSelectable = true;
             this.metroTile14.Click += new System.EventHandler(this.metroTile14_Click);
             // 
+            // metroTile15
+            // 
+            this.metroTile15.ActiveControl = null;
+            this.metroTile15.Location = new System.Drawing.Point(234, 405);
+            this.metroTile15.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTile15.Name = "metroTile15";
+            this.metroTile15.Size = new System.Drawing.Size(424, 46);
+            this.metroTile15.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTile15.TabIndex = 27;
+            this.metroTile15.Text = "Purchases Manager";
+            this.metroTile15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile15.UseSelectable = true;
+            this.metroTile15.Click += new System.EventHandler(this.metroTile15_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 437);
+            this.ClientSize = new System.Drawing.Size(887, 467);
+            this.Controls.Add(this.metroTile15);
             this.Controls.Add(this.metroTile12);
             this.Controls.Add(this.metroTile13);
             this.Controls.Add(this.metroTile14);
@@ -259,9 +275,9 @@
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPanel";
-            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Admin Panel";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminPanel_FormClosed);
@@ -286,5 +302,6 @@
         private MetroFramework.Controls.MetroTile metroTile12;
         private MetroFramework.Controls.MetroTile metroTile13;
         private MetroFramework.Controls.MetroTile metroTile14;
+        private MetroFramework.Controls.MetroTile metroTile15;
     }
 }

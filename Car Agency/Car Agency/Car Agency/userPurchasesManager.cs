@@ -32,14 +32,14 @@ namespace Car_Agency
 
 		private void metroTile2_Click(object sender, EventArgs e)
 		{
-			purchaseCar form = new purchaseCar();
+			PurchaseCar form = new PurchaseCar();
 			form.Show(this);
 			this.Hide();
 		}
 
 		private void metroTile4_Click(object sender, EventArgs e)
 		{
-			viewCategory form = new viewCategory();
+			ViewCategory form = new ViewCategory();
 			form.Show(this);
 			this.Hide();
 		}

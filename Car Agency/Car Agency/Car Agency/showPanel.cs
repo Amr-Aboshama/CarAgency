@@ -27,13 +27,11 @@ namespace Car_Agency
             if(Username == "admin")
             {
                 adminPanelButton.Visible = true;
-                DataTable dt = controllerObj.getAllJobs();
-                for (int i = 0; i < dt.Rows.Count; ++i)
-                    if (dt.Rows[i][0].ToString() == "--All--")
-                    {
-                        dt.Rows.RemoveAt(i);
-                        return;
-                    }
+                metroLabel1.Visible = false;
+                privileges.Visible = false;
+                showPropertiesButton.Visible = false;
+                Point p = new Point(99, 120);
+                adminPanelButton.Location = p;
             }
             else
             {

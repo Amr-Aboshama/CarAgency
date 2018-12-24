@@ -26,8 +26,8 @@ namespace Car_Agency
 		private void metroTile1_Click(object sender, EventArgs e)
 		{
             addUser form = new addUser();
-			form.Show(this);
-			this.Hide();
+            Hide();
+            form.Show(this);
 		}
 
 		private void metroTile4_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace Car_Agency
         {
             ViewAllCars form = new ViewAllCars();
             form.Show(this);
-            this.Hide();
+            Hide();
         }
 
         private void metroTile12_Click(object sender, EventArgs e)
@@ -124,6 +124,13 @@ namespace Car_Agency
             Statistics form = new Statistics();
             form.Show(this);
             this.Hide();
+        }
+
+        private void metroTile15_Click(object sender, EventArgs e)
+        {
+            userPurchasesManager PM = new userPurchasesManager();
+            PM.Show(this);
+            Hide();
         }
     }
 }

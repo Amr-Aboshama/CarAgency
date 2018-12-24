@@ -50,7 +50,7 @@ namespace Car_Agency
 
             saleID = Convert.ToInt32(InstallmentsGrid.SelectedRows[0].Cells["Sale ID"].Value);
 
-            //new SPDetails(true, saleID).Show();
+            new SPDetails(true, saleID.Value).Show();
         }
 
         private void ViewInstallment_FormClosed(object sender, FormClosedEventArgs e)

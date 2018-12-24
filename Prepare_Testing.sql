@@ -2,7 +2,7 @@ USE CarAgencyDB
 
 INSERT INTO CURRENCY VALUES('EGP', 1.0);
 
-INSERT INTO Jobs values('Sales Agent');
+
 INSERT INTO Jobs values('Sales Manager');
 INSERT INTO Jobs values('Purchases Manager');
 INSERT INTO Employee(EmpNatID,Name) VALUES(123,'TEST1');

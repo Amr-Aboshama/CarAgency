@@ -15,6 +15,7 @@ namespace Car_Agency
     public partial class addUser : MetroForm
     {
         Controller controllerObj;
+        Form owner;
         public addUser()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace Car_Agency
 
         private void addUser_Load(object sender, EventArgs e)
         {
+            owner = Owner;
             string defaultJob = "--All--";
             privileges.Clear();
             DataTable dt = controllerObj.getAllJobs();
@@ -43,7 +45,7 @@ namespace Car_Agency
 
         private void AddUserButton_Click(object sender, EventArgs e)
         {
-
+            Form owner = Owner;
             bool charflag = false;
 
             // Check for Missed Data
@@ -151,7 +153,7 @@ namespace Car_Agency
 
         private void addUser_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Owner.Show();
+            owner.Show();
         }
     }
 }

@@ -17,22 +17,25 @@ namespace Car_Agency
         {
             InitializeComponent();
         }
-
-        private void metroButton1_Click(object sender, EventArgs e)
+        
+	
+        private void userCreditManager_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new ViewInstallment().Show(this);
-			this.Hide();
-		}
+            Owner.Show();
+        }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void metroTile1_Click(object sender, EventArgs e)
         {
-            new ViewCheques().Show(this);
-			this.Hide();
-		}
+            ViewInstallment VI = new ViewInstallment();
+            VI.Show(this);
+            this.Hide();
+        }
 
-		private void userCreditManager_Load(object sender, EventArgs e)
-		{
-
-		}
-	}
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            ViewCheques VC = new ViewCheques();
+            VC.Show(this);
+            this.Hide();
+        }
+    }
 }

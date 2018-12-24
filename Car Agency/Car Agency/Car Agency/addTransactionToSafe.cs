@@ -13,14 +13,14 @@ namespace Car_Agency
 {
     public partial class addTransactionToSafe : MetroForm
     {
-        int priv, treasuryId;
+        int treasuryId;
         decimal empId;
         Controller controllerObj;
         public addTransactionToSafe()
         {
+            
             InitializeComponent();
             controllerObj = new Controller();
-            priv = controllerObj.getPriv(Login.LoginUsername); // get Privilage
             empId = controllerObj.getEmpIDByUser(Login.LoginUsername);   // get Employee Id
 
             DataTable dt = controllerObj.getTreasuries(2);
@@ -29,12 +29,7 @@ namespace Car_Agency
             metroComboBox1.ValueMember = "TreasuryID";
             metroComboBox1.SelectedValue = 0;
         }
-
-        private void addTransactionToSafe_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Owner.Show();
-        }
-
+        
         private void metroButton1_Click(object sender, EventArgs e)
         {
             decimal price;
@@ -78,6 +73,11 @@ namespace Car_Agency
             {
                 MessageBox.Show(E.Message);
             }
+        }
+
+        private void addTransactionToSafe_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }

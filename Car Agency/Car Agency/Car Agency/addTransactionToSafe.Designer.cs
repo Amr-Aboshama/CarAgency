@@ -208,7 +208,7 @@
             this.Name = "addTransactionToSafe";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Add Transaction to Safe";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.addTransactionToSafe_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.addTransactionToSafe_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

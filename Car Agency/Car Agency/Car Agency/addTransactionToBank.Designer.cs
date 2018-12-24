@@ -212,6 +212,7 @@
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Add Transaction to Bank";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.addTransactionToBank_FormClosed);
+            this.Load += new System.EventHandler(this.addTransactionToBank_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

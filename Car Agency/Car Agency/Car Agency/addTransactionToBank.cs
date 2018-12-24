@@ -13,14 +13,14 @@ namespace Car_Agency
 {
     public partial class addTransactionToBank : MetroForm
     {
-        int priv,treasuryId;
+        int treasuryId;
         decimal empId;
         Controller controllerObj;
+        Form owner;
         public addTransactionToBank()
         {
             InitializeComponent();
             controllerObj = new Controller();
-            priv = controllerObj.getPriv(Login.LoginUsername); // get Privilage
             empId = controllerObj.getEmpIDByUser(Login.LoginUsername);   // get Employee Id
 
             DataTable dt = controllerObj.getTreasuries(1);
@@ -32,7 +32,7 @@ namespace Car_Agency
 
         private void addTransactionToBank_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Owner.Show();
+            owner.Show();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -79,6 +79,11 @@ namespace Car_Agency
                 MessageBox.Show(E.Message);
             }
             
+        }
+
+        private void addTransactionToBank_Load(object sender, EventArgs e)
+        {
+            owner = Owner;
         }
     }
 }

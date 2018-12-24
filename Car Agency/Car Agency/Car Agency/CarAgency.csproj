@@ -158,6 +158,12 @@
     <Compile Include="SPDetails.designer.cs">
       <DependentUpon>SPDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="userPurchasesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userPurchasesManager.Designer.cs">
+      <DependentUpon>userPurchasesManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="userTreasuryManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SPDetails.resx">
       <DependentUpon>SPDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userPurchasesManager.resx">
+      <DependentUpon>userPurchasesManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userTreasuryManager.resx">
       <DependentUpon>userTreasuryManager.cs</DependentUpon>
